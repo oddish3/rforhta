@@ -4,13 +4,18 @@ execute:
   freeze: auto
 website:
   title: rforhta
-  navbar:
-    left:
-      - index.qmd
-      - src/01_summary.qmd
-      - src/02_intro.qmd
-      - src/03_references.qmd
-      - src/visualisation.qmd
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - text: "Introduction"
+        href: index.qmd
+      - section: "Basics"
+        contents:
+          - src/01_summary.qmd
+          - src/02_intro.qmd
+          - src/03_references.qmd
+          - src/visualisation.qmd
 bibliography: rforhta.bib
 format:
   html:
