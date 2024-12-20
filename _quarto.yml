@@ -2,19 +2,17 @@ project:
   type: book
 execute:
   pre-render: Rscript update_chapters.R
+  freeze: auto
 book:
   title: rforhta
-  author: Norah Jones
-  date: "`r Sys.Date()`"
+  author: Sol Yates
   chapters:
   - index.qmd
   - src/01_summary.qmd
   - src/02_intro.qmd
   - src/03_references.qmd
-bibliography: references.bib
+bibliography: rforhta.bib
 format:
   html:
     theme: cosmo
-  pdf:
-    documentclass: scrreprt
 editor: visual

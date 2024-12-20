@@ -1,20 +1,12 @@
---
-bibliography: references.bib
----
 
-@zotero-7
+
 
 # introduction to data in health economics
 
 ## Overview of data in health research
 
-
-## Introduction to reproducible research 
-
+## Introduction to reproducible research
 
 ## Basic tools: R, Python, Stata comparison
 
-
 ## Setting up computational environments
-
-

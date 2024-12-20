@@ -1,39 +1,83 @@
+---
+bibliography: ../rforhta.bib
+link-citations: true
+---
+
 ## Data Visualisation
 
 ```{r}
-library(palmerpenguins)
-library(ggthemes)
 library(here)
 library(tidyverse)
+source(here("_common.R"))
 ```
 
-do penguins with longer flippers weigh more or less than pengiuns with
-shorter flippers?
-
-to make this easier, we define: - a variable is a quantity, quality or
-property that you can measure - a value is the state of a variable when
-you measure it, which may change from observation to observation - an
-observation is a set of measurements made under similar conditions, an
-observation will contain several values, each ass
-
-```{r}
-dat <- read.csv(file = here("./data/nice-tech-apps-eng-apr24-ICB-Utilisation.csv")) 
-
-dat1 <- dat %>% filter(year == "2023_24", quarter == 1, data_source == "Secondary Care", data_type == "ICB Utilisation", treatment_type == "medicine")
-
-dat_grp <- read.csv(file = here("./data//nice-tech-apps-eng-oct23-ICB-Group.csv"))
-
-dat_grp1 <- dat_grp %>% filter(year == "2023_24", quarter == 1)
-# data_source == "Secondary Care", data_type == "ICB Utilisation", treatment_type == "medicine"
-
-```
+The following data used is the Innovation Scorecard (NICE Technology
+Appraisals in the NHS in England) to October 2024 at the ICB level. If
+you're not familiar with this dataset, it is found here (@zotero-739)
+and "aims to improve transparency within the NHS of what treatments
+recommended by NICE are available at a local level. The local level can
+be within trusts and ICBs as well as national and NHS England region
+levels. The Innovation Scorecard has been published with the intention
+of assisting the NHS in the identification of variation which, through
+discussion, can be explained, challenged, or acted upon. It is not
+intended to be used for performance management.".
 
 ```{r}
-head(dat1)
+dat_grp <- read.csv(file = here("./data/nice-tech-apps-eng-oct24-ICB-Group.csv"))
+
+dat_grp1 <- dat_grp %>% filter(year == "2023_24", quarter == 1, data_source == "Secondary Care", treatment_type == "medicine")
+
 ```
 
 ```{r}
 head(dat_grp1)
+unique(dat_grp1$treatment_name)
 ```
 
-some changes
+```{r}
+dat_ut <- read.csv(file = here("./data/nice-tech-apps-eng-oct24-ICB-Utilisation.csv"))
+
+dat_ut1 <- dat_grp %>% filter(year == "2023_24", quarter == 1, data_source == "Secondary Care", treatment_type == "medicine")
+```
+
+```{r}
+head(dat_ut1)
+unique(dat_ut1$treatment_name)
+```
+
+
+```{r}
+dat1 %>% filter(high_level_condition == "Breast Cancer") %>%  ggplot(aes(x = treatment_name, y = value)) +
+  geom_boxplot(fill = "lightblue", alpha = 0.7) +
+  theme_minimal() +
+  labs(title = "Distribution of Utilisation by Treatment Type within Breast Cancer",
+       y = "DDD per 100,000 population",
+       x = "Treatment Type") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+```{r}
+dat1 %>%
+  group_by(provider_name) %>%
+  summarize(avg_utilization = mean(value)) %>%
+  arrange(desc(avg_utilization)) %>%
+  head(10) %>%
+  ggplot(aes(x = reorder(provider_name, avg_utilization), y = avg_utilization)) +
+  geom_point() +
+  coord_flip() +
+  theme_minimal() +
+  labs(title = "Top 10 Providers by Average Utilization",
+       x = "Provider Name",
+       y = "Average DDD per 100,000 population")
+```
+
+```{r}
+ggplot(dat1, aes(x = high_level_condition, y = value, fill = treatment_type)) +
+  geom_violin(alpha = 0.7) +
+  theme_minimal() +
+  labs(title = "Treatment Utilization by Condition",
+       y = "DDD per 100,000 population",
+       x = "Condition") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
+  scale_y_continuous(labels = scales::comma)
+```
