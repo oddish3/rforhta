@@ -1,0 +1,20 @@
+project:
+  type: book
+execute:
+  pre-render: Rscript update_chapters.R
+book:
+  title: rforhta
+  author: Norah Jones
+  date: "`r Sys.Date()`"
+  chapters:
+  - index.qmd
+  - src/01_summary.qmd
+  - src/02_intro.qmd
+  - src/03_references.qmd
+bibliography: references.bib
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+editor: visual

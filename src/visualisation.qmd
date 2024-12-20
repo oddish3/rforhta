@@ -1,0 +1,37 @@
+## Data Visualisation
+
+```{r}
+library(palmerpenguins)
+library(ggthemes)
+library(here)
+library(tidyverse)
+```
+
+do penguins with longer flippers weigh more or less than pengiuns with
+shorter flippers?
+
+to make this easier, we define: - a variable is a quantity, quality or
+property that you can measure - a value is the state of a variable when
+you measure it, which may change from observation to observation - an
+observation is a set of measurements made under similar conditions, an
+observation will contain several values, each ass
+
+```{r}
+dat <- read.csv(file = here("./data/nice-tech-apps-eng-apr24-ICB-Utilisation.csv")) 
+
+dat1 <- dat %>% filter(year == "2023_24", quarter == 1, data_source == "Secondary Care", data_type == "ICB Utilisation", treatment_type == "medicine")
+
+dat_grp <- read.csv(file = here("./data//nice-tech-apps-eng-oct23-ICB-Group.csv"))
+
+dat_grp1 <- dat_grp %>% filter(year == "2023_24", quarter == 1)
+# data_source == "Secondary Care", data_type == "ICB Utilisation", treatment_type == "medicine"
+
+```
+
+```{r}
+head(dat1)
+```
+
+```{r}
+head(dat_grp1)
+```
