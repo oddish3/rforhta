@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>visualisation – rforhta</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-659650fc26dc25888fc1474f317bb8ac.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">rforhta</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Preface</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../src/01_summary.html"> 
+<span class="menu-text">introduction to data in health economics</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../src/02_intro.html"> 
+<span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../src/03_references.html"> 
+<span class="menu-text">References</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../src/visualisation.html" aria-current="page"> 
+<span class="menu-text">Data Visualisation</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="data-visualisation" class="level2">
+<h2 class="anchored" data-anchor-id="data-visualisation">Data Visualisation</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>here() starts at /Users/user/repos/public/rforhta</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     </code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"_common.R"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The following data used is the Innovation Scorecard (NICE Technology Appraisals in the NHS in England) to October 2024 at the ICB level. If you’re not familiar with this dataset, it is found here (<span class="citation" data-cites="zotero-739"><span>“Background and Introduction | <span>NHSBSA</span>”</span> (<a href="#ref-zotero-739" role="doc-biblioref">n.d.</a>)</span>) and “aims to improve transparency within the NHS of what treatments recommended by NICE are available at a local level. The local level can be within trusts and ICBs as well as national and NHS England region levels. The Innovation Scorecard has been published with the intention of assisting the NHS in the identification of variation which, through discussion, can be explained, challenged, or acted upon. It is not intended to be used for performance management.”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dat_grp <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="fu">here</span>(<span class="st">"./data/nice-tech-apps-eng-oct24-ICB-Group.csv"</span>))</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>dat_grp1 <span class="ot">&lt;-</span> dat_grp <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="st">"2023_24"</span>, quarter <span class="sc">==</span> <span class="dv">1</span>, data_source <span class="sc">==</span> <span class="st">"Secondary Care"</span>, treatment_type <span class="sc">==</span> <span class="st">"medicine"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dat_grp1)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      year quarter year_quarter    data_type    data_source treatment_type</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 2023_24       1   2023/24 Q1 ICB Grouping Secondary Care       medicine</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 2023_24       1   2023/24 Q1 ICB Grouping Secondary Care       medicine</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 2023_24       1   2023/24 Q1 ICB Grouping Secondary Care       medicine</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 2023_24       1   2023/24 Q1 ICB Grouping Secondary Care       medicine</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 2023_24       1   2023/24 Q1 ICB Grouping Secondary Care       medicine</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6 2023_24       1   2023/24 Q1 ICB Grouping Secondary Care       medicine</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                  treatment_name provider_code</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 ACUTE CORONARY SYNDROME GROUP           QE1</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 ACUTE CORONARY SYNDROME GROUP           QF7</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 ACUTE CORONARY SYNDROME GROUP           QGH</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 ACUTE CORONARY SYNDROME GROUP           QH8</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 ACUTE CORONARY SYNDROME GROUP           QHG</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6 ACUTE CORONARY SYNDROME GROUP           QHL</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                                                     provider_name numerator</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1          NHS LANCASHIRE AND SOUTH CUMBRIA INTEGRATED CARE BOARD   20617.0</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2                       NHS SOUTH YORKSHIRE INTEGRATED CARE BOARD   34048.5</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3      NHS HEREFORDSHIRE AND WORCESTERSHIRE INTEGRATED CARE BOARD    5568.5</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4                   NHS MID AND SOUTH ESSEX INTEGRATED CARE BOARD   17110.5</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 NHS BEDFORDSHIRE, LUTON AND MILTON KEYNES INTEGRATED CARE BOARD    7490.0</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6               NHS BIRMINGHAM AND SOLIHULL INTEGRATED CARE BOARD   20841.0</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   numerator_unit    high_level_condition denominator denominator_unit</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1            ADD Acute Coronary Syndrome     1737241       Population</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2            ADD Acute Coronary Syndrome     1392105       Population</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3            ADD Acute Coronary Syndrome      797935       Population</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4            ADD Acute Coronary Syndrome     1209480       Population</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5            ADD Acute Coronary Syndrome     1015380       Population</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6            ADD Acute Coronary Syndrome     1375281       Population</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       value                 value_unit expected_days_of_treatment</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 1186.7668 ADD per 100,000 population                         NA</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 2445.8284 ADD per 100,000 population                         NA</span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  697.8639 ADD per 100,000 population                         NA</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 1414.6989 ADD per 100,000 population                         NA</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  737.6549 ADD per 100,000 population                         NA</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6 1515.3994 ADD per 100,000 population                         NA</span></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   expected_upper_range expected_lower_range ratio_observed.expected</span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1                   NA                   NA                      NA</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2                   NA                   NA                      NA</span></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3                   NA                   NA                      NA</span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4                   NA                   NA                      NA</span></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5                   NA                   NA                      NA</span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6                   NA                   NA                      NA</span></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   upper_ratio_observed.expected lower_ratio_observed.expected</span></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1                            NA                            NA</span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2                            NA                            NA</span></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3                            NA                            NA</span></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4                            NA                            NA</span></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5                            NA                            NA</span></span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6                            NA                            NA</span></span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   provider_ons_code</span></span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1         E54000048</span></span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2         E54000061</span></span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3         E54000019</span></span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4         E54000026</span></span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5         E54000024</span></span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6         E54000055</span></span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(dat_grp1<span class="sc">$</span>treatment_name)</span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] "ACUTE CORONARY SYNDROME GROUP"                             </span></span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [2] "COVID-19 GROUP"                                            </span></span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [3] "CYSTIC FIBROSIS GROUP"                                     </span></span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [4] "EGFR NON-SMALL-CELL LUNG CANCER GROUP"                     </span></span>
+<span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [5] "HATTR POLYNEUROPATHY GROUP"                                </span></span>
+<span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [6] "HEPATITIS C GROUP"                                         </span></span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [7] "ICOSAPENT ETHYL GROUP"                                     </span></span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [8] "METASTATIC PROSTATE CANCER GROUP"                          </span></span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [9] "MIGRAINE GROUP"                                            </span></span>
+<span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [10] "MULTIPLE SCLEROSIS GROUP"                                  </span></span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [11] "OBESITY GROUP"                                             </span></span>
+<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [12] "PRIMARY HYPERCHOLESTEROLAEMIA GROUP"                       </span></span>
+<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [13] "SEVERE ASTHMA GROUP"                                       </span></span>
+<span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [14] "SGLT-2 INHIBITORS GROUP"                                   </span></span>
+<span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [15] "SMOKING CESSATION GROUP"                                   </span></span>
+<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [16] "abiraterone acetate"                                       </span></span>
+<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [17] "afatinib"                                                  </span></span>
+<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [18] "alemtuzumab"                                               </span></span>
+<span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [19] "alirocumab"                                                </span></span>
+<span id="cb8-78"><a href="#cb8-78" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [20] "apalutamide"                                               </span></span>
+<span id="cb8-79"><a href="#cb8-79" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [21] "benralizumab"                                              </span></span>
+<span id="cb8-80"><a href="#cb8-80" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [22] "cabazitaxel"                                               </span></span>
+<span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [23] "canagliflozin"                                             </span></span>
+<span id="cb8-82"><a href="#cb8-82" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [24] "cladribine (Mavenclad only)"                               </span></span>
+<span id="cb8-83"><a href="#cb8-83" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [25] "dacomitinib"                                               </span></span>
+<span id="cb8-84"><a href="#cb8-84" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [26] "dapagliflozin"                                             </span></span>
+<span id="cb8-85"><a href="#cb8-85" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [27] "dimethyl fumarate (Tecfidera only)"                        </span></span>
+<span id="cb8-86"><a href="#cb8-86" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [28] "diroximel fumarate"                                        </span></span>
+<span id="cb8-87"><a href="#cb8-87" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [29] "elbasvir-grazoprevir"                                      </span></span>
+<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [30] "empagliflozin"                                             </span></span>
+<span id="cb8-89"><a href="#cb8-89" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [31] "enzalutamide"                                              </span></span>
+<span id="cb8-90"><a href="#cb8-90" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [32] "eptinezumab"                                               </span></span>
+<span id="cb8-91"><a href="#cb8-91" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [33] "erenumab (140mg only)"                                     </span></span>
+<span id="cb8-92"><a href="#cb8-92" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [34] "erlotinib (150mg only)"                                    </span></span>
+<span id="cb8-93"><a href="#cb8-93" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [35] "ertugliflozin"                                             </span></span>
+<span id="cb8-94"><a href="#cb8-94" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [36] "evolocumab"                                                </span></span>
+<span id="cb8-95"><a href="#cb8-95" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [37] "fingolimod"                                                </span></span>
+<span id="cb8-96"><a href="#cb8-96" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [38] "fremanezumab"                                              </span></span>
+<span id="cb8-97"><a href="#cb8-97" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [39] "galcanezumab"                                              </span></span>
+<span id="cb8-98"><a href="#cb8-98" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [40] "gefitinib"                                                 </span></span>
+<span id="cb8-99"><a href="#cb8-99" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [41] "glatiramer acetate"                                        </span></span>
+<span id="cb8-100"><a href="#cb8-100" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [42] "glecaprevir-pibrentasvir"                                  </span></span>
+<span id="cb8-101"><a href="#cb8-101" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [43] "icosapent ethyl"                                           </span></span>
+<span id="cb8-102"><a href="#cb8-102" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [44] "inclisiran"                                                </span></span>
+<span id="cb8-103"><a href="#cb8-103" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [45] "inotersen"                                                 </span></span>
+<span id="cb8-104"><a href="#cb8-104" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [46] "interferon beta-1a"                                        </span></span>
+<span id="cb8-105"><a href="#cb8-105" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [47] "interferon beta-1b (Extavia only)"                         </span></span>
+<span id="cb8-106"><a href="#cb8-106" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [48] "ivacaftor (branded as Kalydeco)"                           </span></span>
+<span id="cb8-107"><a href="#cb8-107" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [49] "ivacaftor, tezacaftor and elexacaftor (branded as Kaftrio)"</span></span>
+<span id="cb8-108"><a href="#cb8-108" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [50] "ledipasvir-sofosbuvir"                                     </span></span>
+<span id="cb8-109"><a href="#cb8-109" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [51] "liraglutide (Saxenda only)"                                </span></span>
+<span id="cb8-110"><a href="#cb8-110" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [52] "lumacaftor-ivacaftor (branded as Orkambi)"                 </span></span>
+<span id="cb8-111"><a href="#cb8-111" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [53] "mepolizumab"                                               </span></span>
+<span id="cb8-112"><a href="#cb8-112" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [54] "natalizumab"                                               </span></span>
+<span id="cb8-113"><a href="#cb8-113" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [55] "nirmatrelvir with ritonavir"                               </span></span>
+<span id="cb8-114"><a href="#cb8-114" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [56] "ocrelizumab"                                               </span></span>
+<span id="cb8-115"><a href="#cb8-115" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [57] "ofatumumab"                                                </span></span>
+<span id="cb8-116"><a href="#cb8-116" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [58] "omalizumab"                                                </span></span>
+<span id="cb8-117"><a href="#cb8-117" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [59] "osimertinib"                                               </span></span>
+<span id="cb8-118"><a href="#cb8-118" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [60] "patisiran"                                                 </span></span>
+<span id="cb8-119"><a href="#cb8-119" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [61] "peginterferon beta-1a"                                     </span></span>
+<span id="cb8-120"><a href="#cb8-120" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [62] "ponesimod"                                                 </span></span>
+<span id="cb8-121"><a href="#cb8-121" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [63] "prasugrel"                                                 </span></span>
+<span id="cb8-122"><a href="#cb8-122" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [64] "remdesivir"                                                </span></span>
+<span id="cb8-123"><a href="#cb8-123" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [65] "reslizumab"                                                </span></span>
+<span id="cb8-124"><a href="#cb8-124" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [66] "rivaroxaban (2.5mg tabs only)"                             </span></span>
+<span id="cb8-125"><a href="#cb8-125" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [67] "semaglutide (Wegovy only)"                                 </span></span>
+<span id="cb8-126"><a href="#cb8-126" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [68] "siponimod"                                                 </span></span>
+<span id="cb8-127"><a href="#cb8-127" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [69] "sofosbuvir-velpatasvir"                                    </span></span>
+<span id="cb8-128"><a href="#cb8-128" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [70] "sofosbuvir-velpatasvir-voxilaprevir"                       </span></span>
+<span id="cb8-129"><a href="#cb8-129" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [71] "sotrovimab"                                                </span></span>
+<span id="cb8-130"><a href="#cb8-130" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [72] "teriflunomide"                                             </span></span>
+<span id="cb8-131"><a href="#cb8-131" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [73] "tezacaftor and ivacaftor (branded as Symkevi)"             </span></span>
+<span id="cb8-132"><a href="#cb8-132" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [74] "tezepelumab"                                               </span></span>
+<span id="cb8-133"><a href="#cb8-133" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [75] "ticagrelor (90mg tabs only)"                               </span></span>
+<span id="cb8-134"><a href="#cb8-134" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [76] "varenicline"                                               </span></span>
+<span id="cb8-135"><a href="#cb8-135" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [77] "vutrisiran"                                                </span></span>
+<span id="cb8-136"><a href="#cb8-136" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [78] "DOAC SECONDARY GROUP"                                      </span></span>
+<span id="cb8-137"><a href="#cb8-137" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [79] "apixaban (2.5mg tabs only)"                                </span></span>
+<span id="cb8-138"><a href="#cb8-138" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [80] "dabigatran etexilate (75mg and 110mg caps only)"           </span></span>
+<span id="cb8-139"><a href="#cb8-139" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [81] "rivaroxaban (10mg tabs only)"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>dat_ut <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="fu">here</span>(<span class="st">"./data/nice-tech-apps-eng-oct24-ICB-Utilisation.csv"</span>))</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>dat_ut1 <span class="ot">&lt;-</span> dat_grp <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="st">"2023_24"</span>, quarter <span class="sc">==</span> <span class="dv">1</span>, data_source <span class="sc">==</span> <span class="st">"Secondary Care"</span>, treatment_type <span class="sc">==</span> <span class="st">"medicine"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dat_ut1)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      year quarter year_quarter    data_type    data_source treatment_type</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 2023_24       1   2023/24 Q1 ICB Grouping Secondary Care       medicine</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 2023_24       1   2023/24 Q1 ICB Grouping Secondary Care       medicine</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 2023_24       1   2023/24 Q1 ICB Grouping Secondary Care       medicine</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 2023_24       1   2023/24 Q1 ICB Grouping Secondary Care       medicine</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 2023_24       1   2023/24 Q1 ICB Grouping Secondary Care       medicine</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6 2023_24       1   2023/24 Q1 ICB Grouping Secondary Care       medicine</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                  treatment_name provider_code</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 ACUTE CORONARY SYNDROME GROUP           QE1</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 ACUTE CORONARY SYNDROME GROUP           QF7</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 ACUTE CORONARY SYNDROME GROUP           QGH</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 ACUTE CORONARY SYNDROME GROUP           QH8</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 ACUTE CORONARY SYNDROME GROUP           QHG</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6 ACUTE CORONARY SYNDROME GROUP           QHL</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                                                     provider_name numerator</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1          NHS LANCASHIRE AND SOUTH CUMBRIA INTEGRATED CARE BOARD   20617.0</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2                       NHS SOUTH YORKSHIRE INTEGRATED CARE BOARD   34048.5</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3      NHS HEREFORDSHIRE AND WORCESTERSHIRE INTEGRATED CARE BOARD    5568.5</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4                   NHS MID AND SOUTH ESSEX INTEGRATED CARE BOARD   17110.5</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 NHS BEDFORDSHIRE, LUTON AND MILTON KEYNES INTEGRATED CARE BOARD    7490.0</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6               NHS BIRMINGHAM AND SOLIHULL INTEGRATED CARE BOARD   20841.0</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   numerator_unit    high_level_condition denominator denominator_unit</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1            ADD Acute Coronary Syndrome     1737241       Population</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2            ADD Acute Coronary Syndrome     1392105       Population</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3            ADD Acute Coronary Syndrome      797935       Population</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4            ADD Acute Coronary Syndrome     1209480       Population</span></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5            ADD Acute Coronary Syndrome     1015380       Population</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6            ADD Acute Coronary Syndrome     1375281       Population</span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       value                 value_unit expected_days_of_treatment</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 1186.7668 ADD per 100,000 population                         NA</span></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 2445.8284 ADD per 100,000 population                         NA</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  697.8639 ADD per 100,000 population                         NA</span></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 1414.6989 ADD per 100,000 population                         NA</span></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  737.6549 ADD per 100,000 population                         NA</span></span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6 1515.3994 ADD per 100,000 population                         NA</span></span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   expected_upper_range expected_lower_range ratio_observed.expected</span></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1                   NA                   NA                      NA</span></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2                   NA                   NA                      NA</span></span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3                   NA                   NA                      NA</span></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4                   NA                   NA                      NA</span></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5                   NA                   NA                      NA</span></span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6                   NA                   NA                      NA</span></span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   upper_ratio_observed.expected lower_ratio_observed.expected</span></span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1                            NA                            NA</span></span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2                            NA                            NA</span></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3                            NA                            NA</span></span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4                            NA                            NA</span></span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5                            NA                            NA</span></span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6                            NA                            NA</span></span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   provider_ons_code</span></span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1         E54000048</span></span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2         E54000061</span></span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3         E54000019</span></span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4         E54000026</span></span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5         E54000024</span></span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6         E54000055</span></span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(dat_ut1<span class="sc">$</span>treatment_name)</span>
+<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] "ACUTE CORONARY SYNDROME GROUP"                             </span></span>
+<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [2] "COVID-19 GROUP"                                            </span></span>
+<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [3] "CYSTIC FIBROSIS GROUP"                                     </span></span>
+<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [4] "EGFR NON-SMALL-CELL LUNG CANCER GROUP"                     </span></span>
+<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [5] "HATTR POLYNEUROPATHY GROUP"                                </span></span>
+<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [6] "HEPATITIS C GROUP"                                         </span></span>
+<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [7] "ICOSAPENT ETHYL GROUP"                                     </span></span>
+<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [8] "METASTATIC PROSTATE CANCER GROUP"                          </span></span>
+<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [9] "MIGRAINE GROUP"                                            </span></span>
+<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [10] "MULTIPLE SCLEROSIS GROUP"                                  </span></span>
+<span id="cb10-69"><a href="#cb10-69" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [11] "OBESITY GROUP"                                             </span></span>
+<span id="cb10-70"><a href="#cb10-70" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [12] "PRIMARY HYPERCHOLESTEROLAEMIA GROUP"                       </span></span>
+<span id="cb10-71"><a href="#cb10-71" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [13] "SEVERE ASTHMA GROUP"                                       </span></span>
+<span id="cb10-72"><a href="#cb10-72" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [14] "SGLT-2 INHIBITORS GROUP"                                   </span></span>
+<span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [15] "SMOKING CESSATION GROUP"                                   </span></span>
+<span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [16] "abiraterone acetate"                                       </span></span>
+<span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [17] "afatinib"                                                  </span></span>
+<span id="cb10-76"><a href="#cb10-76" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [18] "alemtuzumab"                                               </span></span>
+<span id="cb10-77"><a href="#cb10-77" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [19] "alirocumab"                                                </span></span>
+<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [20] "apalutamide"                                               </span></span>
+<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [21] "benralizumab"                                              </span></span>
+<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [22] "cabazitaxel"                                               </span></span>
+<span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [23] "canagliflozin"                                             </span></span>
+<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [24] "cladribine (Mavenclad only)"                               </span></span>
+<span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [25] "dacomitinib"                                               </span></span>
+<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [26] "dapagliflozin"                                             </span></span>
+<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [27] "dimethyl fumarate (Tecfidera only)"                        </span></span>
+<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [28] "diroximel fumarate"                                        </span></span>
+<span id="cb10-87"><a href="#cb10-87" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [29] "elbasvir-grazoprevir"                                      </span></span>
+<span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [30] "empagliflozin"                                             </span></span>
+<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [31] "enzalutamide"                                              </span></span>
+<span id="cb10-90"><a href="#cb10-90" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [32] "eptinezumab"                                               </span></span>
+<span id="cb10-91"><a href="#cb10-91" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [33] "erenumab (140mg only)"                                     </span></span>
+<span id="cb10-92"><a href="#cb10-92" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [34] "erlotinib (150mg only)"                                    </span></span>
+<span id="cb10-93"><a href="#cb10-93" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [35] "ertugliflozin"                                             </span></span>
+<span id="cb10-94"><a href="#cb10-94" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [36] "evolocumab"                                                </span></span>
+<span id="cb10-95"><a href="#cb10-95" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [37] "fingolimod"                                                </span></span>
+<span id="cb10-96"><a href="#cb10-96" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [38] "fremanezumab"                                              </span></span>
+<span id="cb10-97"><a href="#cb10-97" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [39] "galcanezumab"                                              </span></span>
+<span id="cb10-98"><a href="#cb10-98" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [40] "gefitinib"                                                 </span></span>
+<span id="cb10-99"><a href="#cb10-99" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [41] "glatiramer acetate"                                        </span></span>
+<span id="cb10-100"><a href="#cb10-100" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [42] "glecaprevir-pibrentasvir"                                  </span></span>
+<span id="cb10-101"><a href="#cb10-101" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [43] "icosapent ethyl"                                           </span></span>
+<span id="cb10-102"><a href="#cb10-102" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [44] "inclisiran"                                                </span></span>
+<span id="cb10-103"><a href="#cb10-103" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [45] "inotersen"                                                 </span></span>
+<span id="cb10-104"><a href="#cb10-104" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [46] "interferon beta-1a"                                        </span></span>
+<span id="cb10-105"><a href="#cb10-105" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [47] "interferon beta-1b (Extavia only)"                         </span></span>
+<span id="cb10-106"><a href="#cb10-106" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [48] "ivacaftor (branded as Kalydeco)"                           </span></span>
+<span id="cb10-107"><a href="#cb10-107" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [49] "ivacaftor, tezacaftor and elexacaftor (branded as Kaftrio)"</span></span>
+<span id="cb10-108"><a href="#cb10-108" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [50] "ledipasvir-sofosbuvir"                                     </span></span>
+<span id="cb10-109"><a href="#cb10-109" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [51] "liraglutide (Saxenda only)"                                </span></span>
+<span id="cb10-110"><a href="#cb10-110" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [52] "lumacaftor-ivacaftor (branded as Orkambi)"                 </span></span>
+<span id="cb10-111"><a href="#cb10-111" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [53] "mepolizumab"                                               </span></span>
+<span id="cb10-112"><a href="#cb10-112" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [54] "natalizumab"                                               </span></span>
+<span id="cb10-113"><a href="#cb10-113" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [55] "nirmatrelvir with ritonavir"                               </span></span>
+<span id="cb10-114"><a href="#cb10-114" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [56] "ocrelizumab"                                               </span></span>
+<span id="cb10-115"><a href="#cb10-115" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [57] "ofatumumab"                                                </span></span>
+<span id="cb10-116"><a href="#cb10-116" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [58] "omalizumab"                                                </span></span>
+<span id="cb10-117"><a href="#cb10-117" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [59] "osimertinib"                                               </span></span>
+<span id="cb10-118"><a href="#cb10-118" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [60] "patisiran"                                                 </span></span>
+<span id="cb10-119"><a href="#cb10-119" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [61] "peginterferon beta-1a"                                     </span></span>
+<span id="cb10-120"><a href="#cb10-120" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [62] "ponesimod"                                                 </span></span>
+<span id="cb10-121"><a href="#cb10-121" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [63] "prasugrel"                                                 </span></span>
+<span id="cb10-122"><a href="#cb10-122" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [64] "remdesivir"                                                </span></span>
+<span id="cb10-123"><a href="#cb10-123" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [65] "reslizumab"                                                </span></span>
+<span id="cb10-124"><a href="#cb10-124" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [66] "rivaroxaban (2.5mg tabs only)"                             </span></span>
+<span id="cb10-125"><a href="#cb10-125" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [67] "semaglutide (Wegovy only)"                                 </span></span>
+<span id="cb10-126"><a href="#cb10-126" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [68] "siponimod"                                                 </span></span>
+<span id="cb10-127"><a href="#cb10-127" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [69] "sofosbuvir-velpatasvir"                                    </span></span>
+<span id="cb10-128"><a href="#cb10-128" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [70] "sofosbuvir-velpatasvir-voxilaprevir"                       </span></span>
+<span id="cb10-129"><a href="#cb10-129" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [71] "sotrovimab"                                                </span></span>
+<span id="cb10-130"><a href="#cb10-130" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [72] "teriflunomide"                                             </span></span>
+<span id="cb10-131"><a href="#cb10-131" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [73] "tezacaftor and ivacaftor (branded as Symkevi)"             </span></span>
+<span id="cb10-132"><a href="#cb10-132" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [74] "tezepelumab"                                               </span></span>
+<span id="cb10-133"><a href="#cb10-133" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [75] "ticagrelor (90mg tabs only)"                               </span></span>
+<span id="cb10-134"><a href="#cb10-134" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [76] "varenicline"                                               </span></span>
+<span id="cb10-135"><a href="#cb10-135" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [77] "vutrisiran"                                                </span></span>
+<span id="cb10-136"><a href="#cb10-136" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [78] "DOAC SECONDARY GROUP"                                      </span></span>
+<span id="cb10-137"><a href="#cb10-137" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [79] "apixaban (2.5mg tabs only)"                                </span></span>
+<span id="cb10-138"><a href="#cb10-138" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [80] "dabigatran etexilate (75mg and 110mg caps only)"           </span></span>
+<span id="cb10-139"><a href="#cb10-139" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [81] "rivaroxaban (10mg tabs only)"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>dat_ut1 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(high_level_condition <span class="sc">==</span> <span class="st">"Obesity"</span>) <span class="sc">%&gt;%</span>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> treatment_name, <span class="at">y =</span> value)) <span class="sc">+</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of Utilisation by Treatment Type within Breast Cancer"</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"DDD per 100,000 population"</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Treatment Type"</span>) <span class="sc">+</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visualisation_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>dat1 <span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(provider_name) <span class="sc">%&gt;%</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_utilization =</span> <span class="fu">mean</span>(value)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(avg_utilization)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(provider_name, avg_utilization), <span class="at">y =</span> avg_utilization)) <span class="sc">+</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Top 10 Providers by Average Utilization"</span>,</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Provider Name"</span>,</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Average DDD per 100,000 population"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dat1, <span class="fu">aes</span>(<span class="at">x =</span> high_level_condition, <span class="at">y =</span> value, <span class="at">fill =</span> treatment_type)) <span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Treatment Utilization by Condition"</span>,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"DDD per 100,000 population"</span>,</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Condition"</span>) <span class="sc">+</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span> </span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>comma)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First, let's calculate percentages and trend analysis for each treatment</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>treatment_trends <span class="ot">&lt;-</span> dat_ut <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year_quarter, treatment_name) <span class="sc">%&gt;%</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_ddd =</span> <span class="fu">sum</span>(numerator, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year_quarter) <span class="sc">%&gt;%</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">period_total =</span> <span class="fu">sum</span>(total_ddd),</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">percentage =</span> (total_ddd <span class="sc">/</span> period_total) <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(treatment_name, year_quarter)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; `summarise()` has grouped output by 'year_quarter'. You can override using</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; the `.groups` argument.</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's visualize this for the top treatments</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>top_treatments <span class="ot">&lt;-</span> treatment_trends <span class="sc">%&gt;%</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(treatment_name) <span class="sc">%&gt;%</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_percentage =</span> <span class="fu">mean</span>(percentage)) <span class="sc">%&gt;%</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(avg_percentage)) <span class="sc">%&gt;%</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">5</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(treatment_name)</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a line plot showing trends</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>  treatment_trends <span class="sc">%&gt;%</span> <span class="fu">filter</span>(treatment_name <span class="sc">%in%</span> top_treatments),</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> year_quarter, <span class="at">y =</span> percentage, <span class="at">color =</span> treatment_name, <span class="at">group =</span> treatment_name)</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Treatment Usage Trends Over Time"</span>,</span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Percentage of Total Prescriptions"</span>,</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Quarter"</span></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate year-over-year changes</span></span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>yoy_changes <span class="ot">&lt;-</span> treatment_trends <span class="sc">%&gt;%</span></span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(treatment_name) <span class="sc">%&gt;%</span></span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">prev_year_percentage =</span> <span class="fu">lag</span>(percentage, <span class="at">n =</span> <span class="dv">4</span>),  <span class="co"># assuming 4 quarters per year</span></span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">yoy_change =</span> percentage <span class="sc">-</span> prev_year_percentage</span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(yoy_change))</span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Print summary statistics for key treatments</span></span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a>summary_stats <span class="ot">&lt;-</span> yoy_changes <span class="sc">%&gt;%</span></span>
+<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(treatment_name <span class="sc">%in%</span> top_treatments) <span class="sc">%&gt;%</span></span>
+<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(treatment_name) <span class="sc">%&gt;%</span></span>
+<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">current_percentage =</span> <span class="fu">last</span>(percentage),</span>
+<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">year_ago_percentage =</span> <span class="fu">last</span>(prev_year_percentage),</span>
+<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">change =</span> <span class="fu">last</span>(yoy_change),</span>
+<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">earliest_percentage =</span> <span class="fu">first</span>(percentage)</span>
+<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the summary</span></span>
+<span id="cb14-59"><a href="#cb14-59" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(summary_stats)</span>
+<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 5 × 5</span></span>
+<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   treatment_name current_percentage year_ago_percentage  change</span></span>
+<span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;                       &lt;dbl&gt;               &lt;dbl&gt;   &lt;dbl&gt;</span></span>
+<span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 daratumumab                 15.8                12.6   3.27  </span></span>
+<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 encorafenib                  7.44                7.36  0.0811</span></span>
+<span id="cb14-65"><a href="#cb14-65" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 olaparib                    25.3                26.2  -0.881 </span></span>
+<span id="cb14-66"><a href="#cb14-66" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 rucaparib                    6.42               10.3  -3.89  </span></span>
+<span id="cb14-67"><a href="#cb14-67" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 sapropterin                 10.2                 9.70  0.453 </span></span>
+<span id="cb14-68"><a href="#cb14-68" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ℹ 1 more variable: earliest_percentage &lt;dbl&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visualisation_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-zotero-739" class="csl-entry" role="listitem">
+<span>“Background and Introduction | <span>NHSBSA</span>.”</span> n.d. Accessed December 20, 2024. <a href="https://www.nhsbsa.nhs.uk/statistical-collections/nice-technology-appraisals/nice-technology-appraisals-nhs-england-innovation-scorecard-june-2024/background-and-introduction">https://www.nhsbsa.nhs.uk/statistical-collections/nice-technology-appraisals/nice-technology-appraisals-nhs-england-innovation-scorecard-june-2024/background-and-introduction</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/oddish3\.github\.io\/rforhta\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
