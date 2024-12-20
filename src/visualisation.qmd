@@ -47,7 +47,7 @@ unique(dat_ut1$treatment_name)
 
 
 ```{r}
-dat1 %>% filter(high_level_condition == "Breast Cancer") %>%  ggplot(aes(x = treatment_name, y = value)) +
+dat_ut1 %>% filter(high_level_condition == "Obesity") %>%  ggplot(aes(x = treatment_name, y = value)) +
   geom_boxplot(fill = "lightblue", alpha = 0.7) +
   theme_minimal() +
   labs(title = "Distribution of Utilisation by Treatment Type within Breast Cancer",
@@ -80,4 +80,64 @@ ggplot(dat1, aes(x = high_level_condition, y = value, fill = treatment_type)) +
        x = "Condition") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
   scale_y_continuous(labels = scales::comma)
+```
+
+```{r}
+# First, let's calculate percentages and trend analysis for each treatment
+treatment_trends <- dat_ut %>%
+  group_by(year_quarter, treatment_name) %>%
+  summarize(total_ddd = sum(numerator, na.rm = TRUE)) %>%
+  ungroup() %>%
+  group_by(year_quarter) %>%
+  mutate(
+    period_total = sum(total_ddd),
+    percentage = (total_ddd / period_total) * 100
+  ) %>%
+  arrange(treatment_name, year_quarter)
+
+# Let's visualize this for the top treatments
+top_treatments <- treatment_trends %>%
+  group_by(treatment_name) %>%
+  summarize(avg_percentage = mean(percentage)) %>%
+  arrange(desc(avg_percentage)) %>%
+  head(5) %>%
+  pull(treatment_name)
+
+# Create a line plot showing trends
+ggplot(
+  treatment_trends %>% filter(treatment_name %in% top_treatments),
+  aes(x = year_quarter, y = percentage, color = treatment_name, group = treatment_name)
+) +
+  geom_line() +
+  geom_point() +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(
+    title = "Treatment Usage Trends Over Time",
+    y = "Percentage of Total Prescriptions",
+    x = "Quarter"
+  )
+
+# Calculate year-over-year changes
+yoy_changes <- treatment_trends %>%
+  group_by(treatment_name) %>%
+  mutate(
+    prev_year_percentage = lag(percentage, n = 4),  # assuming 4 quarters per year
+    yoy_change = percentage - prev_year_percentage
+  ) %>%
+  filter(!is.na(yoy_change))
+
+# Print summary statistics for key treatments
+summary_stats <- yoy_changes %>%
+  filter(treatment_name %in% top_treatments) %>%
+  group_by(treatment_name) %>%
+  summarize(
+    current_percentage = last(percentage),
+    year_ago_percentage = last(prev_year_percentage),
+    change = last(yoy_change),
+    earliest_percentage = first(percentage)
+  )
+
+# Print the summary
+print(summary_stats)
 ```

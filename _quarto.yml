@@ -1,16 +1,16 @@
 project:
-  type: book
+  type: website
 execute:
-  pre-render: Rscript update_chapters.R
   freeze: auto
-book:
+website:
   title: rforhta
-  author: Sol Yates
-  chapters:
-  - index.qmd
-  - src/01_summary.qmd
-  - src/02_intro.qmd
-  - src/03_references.qmd
+  navbar:
+    left:
+      - index.qmd
+      - src/01_summary.qmd
+      - src/02_intro.qmd
+      - src/03_references.qmd
+      - src/visualisation.qmd
 bibliography: rforhta.bib
 format:
   html:
