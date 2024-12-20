@@ -54,7 +54,7 @@
     "href": "src/02_intro.html",
     "title": "2  Introduction",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee @knuth84 for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2",
+    "text": "This is a book created from markdown and executable code.\nSee (knuth84?) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
     ]
