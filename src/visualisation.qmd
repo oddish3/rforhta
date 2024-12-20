@@ -57,6 +57,7 @@ dat_ut1 %>% filter(high_level_condition == "Obesity") %>%  ggplot(aes(x = treatm
 ```
 
 ```{r}
+#| eval: false
 dat1 %>%
   group_by(provider_name) %>%
   summarize(avg_utilization = mean(value)) %>%
@@ -72,6 +73,7 @@ dat1 %>%
 ```
 
 ```{r}
+#| eval: false
 ggplot(dat1, aes(x = high_level_condition, y = value, fill = treatment_type)) +
   geom_violin(alpha = 0.7) +
   theme_minimal() +
