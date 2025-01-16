@@ -1,48 +1,12 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "rforhta",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "content/basicr.html",
-    "href": "content/basicr.html",
-    "title": "Base R",
-    "section": "",
-    "text": "this is your introduction to base R"
-  },
-  {
-    "objectID": "content/basicr.html#introduction",
-    "href": "content/basicr.html#introduction",
-    "title": "Base R",
-    "section": "",
-    "text": "this is your introduction to base R"
-  },
-  {
-    "objectID": "content/basicr.html#base-r",
-    "href": "content/basicr.html#base-r",
-    "title": "Base R",
-    "section": "Base R",
-    "text": "Base R"
-  },
-  {
-    "objectID": "content/basicr.html#before-r-there-was",
-    "href": "content/basicr.html#before-r-there-was",
-    "title": "Base R",
-    "section": "Before R there was?",
-    "text": "Before R there was?"
-  },
-  {
-    "objectID": "content/git.html",
-    "href": "content/git.html",
-    "title": "git and github",
-    "section": "",
-    "text": "git is a difficult but extremely helpful tool for those of us that work with data.\ngit is a tool that tracks changes to your files and enables you to share those changes with others.\nThese git configured set of files are called repositories or repos and are organised in a structured way.\nA rather large caveat is that:\n\nit is very much not advised to store data in these projects on git\nwhen working in groups, it is best to store data elsewhere and have scripts that interact with your local copy of the data\n\nIn my work, i use git to store text based code as a backup in case i make breaking changes to my analytical workflow that result in different results / different subsets of data etc.",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2",
     "crumbs": [
-      "Basics",
-      "Git Basics"
+      "Home"
     ]
   },
   {
@@ -79,13 +43,42 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "rforhta",
+    "objectID": "content/git.html",
+    "href": "content/git.html",
+    "title": "git and github",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2",
+    "text": "git is a difficult but extremely helpful tool for those of us that work with data.\ngit is a tool that tracks changes to your files and enables you to share those changes with others.\nThese git configured set of files are called repositories or repos and are organised in a structured way.\nA rather large caveat is that:\n\nit is very much not advised to store data in these projects on git\nwhen working in groups, it is best to store data elsewhere and have scripts that interact with your local copy of the data\n\nIn my work, i use git to store text based code as a backup in case i make breaking changes to my analytical workflow that result in different results / different subsets of data etc.\nabcdefg",
     "crumbs": [
-      "Home"
+      "Basics",
+      "Git Basics"
     ]
+  },
+  {
+    "objectID": "content/basicr.html",
+    "href": "content/basicr.html",
+    "title": "Base R",
+    "section": "",
+    "text": "this is your introduction to base R"
+  },
+  {
+    "objectID": "content/basicr.html#introduction",
+    "href": "content/basicr.html#introduction",
+    "title": "Base R",
+    "section": "",
+    "text": "this is your introduction to base R"
+  },
+  {
+    "objectID": "content/basicr.html#base-r",
+    "href": "content/basicr.html#base-r",
+    "title": "Base R",
+    "section": "Base R",
+    "text": "Base R"
+  },
+  {
+    "objectID": "content/basicr.html#before-r-there-was",
+    "href": "content/basicr.html#before-r-there-was",
+    "title": "Base R",
+    "section": "Before R there was?",
+    "text": "Before R there was?"
   }
 ]
