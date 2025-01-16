@@ -1,0 +1,27 @@
+name: Quarto Publish
+
+on:
+  workflow_dispatch: # Allows manual triggering
+  push:
+    branches:
+      - main  # Triggers the workflow on push to the main branch
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Grants permission to push to the repository
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Render and Publish
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages  # Specifies the target branch for publishing
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication

@@ -1,0 +1,29 @@
+---
+title: "Install R/Rstudio"
+---
+
+## Install R
+
+- Rstudio Installation docs - https://posit.co/download/rstudio-desktop/
+
+After navigating to this website, the download and install R will link you to R installation
+
+![CRAN](../meta/download.png)
+
+Next we want to get to the following page and download whichever R version for your system.
+
+![InstallR](../meta/installr.png)
+Once you have completed the setup and open R, you should see a window similar to this:
+
+![RConsole](../meta/Rconsole.png)
+Alternatively here is a video to walk you through !(this)[https://www.youtube.com/watch?v=0HzKf-StvOE]
+
+## Install Rstudio
+
+RStudio is the editor with which we interact with the R language.
+
+- RStudio Desktop - https://posit.co/download/rstudio-desktop/
+
+![Rstudio](../meta/RstudioIDE.png)
+
+Congratulatoins, you have installed R and Rstudio and taken your first steps to reproducible research in R.

@@ -1,0 +1,17 @@
+---
+title: "git and github"
+---
+
+git is a difficult but extremely helpful tool for those of us that work with data.
+
+git is a tool that tracks changes to your files and enables you to share those changes with others. 
+
+These git configured set of files are called repositories or repos and are organised in a structured way.
+
+A rather large caveat is that:
+
+1. it is very much not advised to store data in these projects on git
+2. when working in groups, it is best to store data elsewhere and have scripts that interact with your local copy of the data
+
+In my work, i use git to store text based code as a backup in case i make breaking changes to my analytical workflow that result in different results / different subsets of data etc. 
+

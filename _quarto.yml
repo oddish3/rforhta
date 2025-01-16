@@ -3,11 +3,19 @@ project:
 
 website:
   title: "rforhta"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - text: "Home"
+        href: index.qmd
+      - section: "Basics"
+        contents: 
+          - text: "Installing R"
+            href: content/installr.qmd
+          - text: "Git Basics"
+            href: content/git.qmd
+
 
 format:
   html:
@@ -16,4 +24,3 @@ format:
     toc: true
 
 editor: visual
-
