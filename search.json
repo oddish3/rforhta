@@ -1,12 +1,35 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "rforhta",
+    "objectID": "content/installr.html",
+    "href": "content/installr.html",
+    "title": "Install R/Rstudio",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2",
+    "text": "Rstudio Installation docs - https://posit.co/download/rstudio-desktop/\n\nAfter navigating to this website, the download and install R will link you to R installation\n\n\n\nCRAN\n\n\nNext we want to get to the following page and download whichever R version for your system.\n Once you have completed the setup and open R, you should see a window similar to this:\n Alternatively here is a video to walk you through !(this)[https://www.youtube.com/watch?v=0HzKf-StvOE]",
     "crumbs": [
-      "Home"
+      "Basics",
+      "Installing R"
+    ]
+  },
+  {
+    "objectID": "content/installr.html#install-r",
+    "href": "content/installr.html#install-r",
+    "title": "Install R/Rstudio",
+    "section": "",
+    "text": "Rstudio Installation docs - https://posit.co/download/rstudio-desktop/\n\nAfter navigating to this website, the download and install R will link you to R installation\n\n\n\nCRAN\n\n\nNext we want to get to the following page and download whichever R version for your system.\n Once you have completed the setup and open R, you should see a window similar to this:\n Alternatively here is a video to walk you through !(this)[https://www.youtube.com/watch?v=0HzKf-StvOE]",
+    "crumbs": [
+      "Basics",
+      "Installing R"
+    ]
+  },
+  {
+    "objectID": "content/installr.html#install-rstudio",
+    "href": "content/installr.html#install-rstudio",
+    "title": "Install R/Rstudio",
+    "section": "Install Rstudio",
+    "text": "Install Rstudio\nRStudio is the editor with which we interact with the R language.\n\nRStudio Desktop - https://posit.co/download/rstudio-desktop/\n\n\n\n\nRstudio\n\n\nCongratulatoins, you have installed R and Rstudio and taken your first steps to reproducible research in R.",
+    "crumbs": [
+      "Basics",
+      "Installing R"
     ]
   },
   {
@@ -38,6 +61,16 @@
     "text": "Before R there was?"
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "rforhta",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
     "objectID": "content/git.html",
     "href": "content/git.html",
     "title": "git and github",
@@ -46,39 +79,6 @@
     "crumbs": [
       "Basics",
       "Git Basics"
-    ]
-  },
-  {
-    "objectID": "content/installr.html",
-    "href": "content/installr.html",
-    "title": "Install R/Rstudio",
-    "section": "",
-    "text": "Rstudio Installation docs - https://posit.co/download/rstudio-desktop/\n\nAfter navigating to this website, the download and install R will link you to R installation\n\n\n\nCRAN\n\n\nNext we want to get to the following page and download whichever R version for your system.\n Once you have completed the setup and open R, you should see a window similar to this:\n Alternatively here is a video to walk you through !(this)[https://www.youtube.com/watch?v=0HzKf-StvOE]",
-    "crumbs": [
-      "Basics",
-      "Installing R"
-    ]
-  },
-  {
-    "objectID": "content/installr.html#install-r",
-    "href": "content/installr.html#install-r",
-    "title": "Install R/Rstudio",
-    "section": "",
-    "text": "Rstudio Installation docs - https://posit.co/download/rstudio-desktop/\n\nAfter navigating to this website, the download and install R will link you to R installation\n\n\n\nCRAN\n\n\nNext we want to get to the following page and download whichever R version for your system.\n Once you have completed the setup and open R, you should see a window similar to this:\n Alternatively here is a video to walk you through !(this)[https://www.youtube.com/watch?v=0HzKf-StvOE]",
-    "crumbs": [
-      "Basics",
-      "Installing R"
-    ]
-  },
-  {
-    "objectID": "content/installr.html#install-rstudio",
-    "href": "content/installr.html#install-rstudio",
-    "title": "Install R/Rstudio",
-    "section": "Install Rstudio",
-    "text": "Install Rstudio\nRStudio is the editor with which we interact with the R language.\n\nRStudio Desktop - https://posit.co/download/rstudio-desktop/\n\n\n\n\nRstudio\n\n\nCongratulatoins, you have installed R and Rstudio and taken your first steps to reproducible research in R.",
-    "crumbs": [
-      "Basics",
-      "Installing R"
     ]
   }
 ]
