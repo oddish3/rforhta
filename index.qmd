@@ -10,3 +10,24 @@ To learn more about Quarto websites visit
 ```{r}
 1 + 1
 ```
+
+This is an example of the code used to make the following ggplot:
+```{r echo=FALSE}
+library(palmerpenguins)
+library(ggplot2)
+```
+
+```{r warning=FALSE}
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point(aes(color = species, shape = species)) +
+  geom_smooth(method = "lm") +
+  labs(
+    title = "Body mass and flipper length",
+    subtitle = "Dimensions for Adelie, Chinstrap, and Gentoo Penguins",
+    x = "Flipper length (mm)",
+    y = "Body mass (g)",
+    color = "Species",
+    shape = "Species"
+  )
+```
+Notice the `color`, `shape` arguments and `geom_smooth()` function used in the included code block!
