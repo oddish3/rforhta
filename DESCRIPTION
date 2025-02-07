@@ -1,0 +1,36 @@
+Package: r4hta
+Title: R for Health Technology Assesment.
+Version: 0.1
+Authors@R: c(
+    person("Sol", "Yates", , "solyates@gmail.com", role = c("aut", "cre")),
+  )
+Depends: 
+    R (>= 3.1.0)
+Imports:
+    arrow,
+    babynames,
+    curl (>= 5.0.0),
+    duckdb,
+    gapminder,
+    ggrepel,
+    ggridges,
+    ggthemes,
+    hexbin,
+    janitor,
+    Lahman,
+    leaflet,
+    maps,
+    nycflights13,
+    openxlsx,
+    palmerpenguins,
+    repurrrsive (>= 1.1.0),
+    tidymodels,
+    tidyverse (>= 2.0.0),
+    writexl
+Suggests:
+    downlit,
+    jpeg,
+    knitr,
+    sessioninfo
+Remotes: tidyverse/dplyr
+Encoding: UTF-8
