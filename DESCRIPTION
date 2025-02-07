@@ -7,21 +7,11 @@ Authors@R: c(
 Depends: 
     R (>= 3.1.0)
 Imports:
-    arrow,
     babynames,
-    curl (>= 5.0.0),
-    duckdb,
-    gapminder,
-    ggrepel,
-    ggridges,
-    ggthemes,
-    hexbin,
     janitor,
     Lahman,
     leaflet,
     maps,
-    nycflights13,
-    openxlsx,
     palmerpenguins,
     repurrrsive (>= 1.1.0),
     tidymodels,
