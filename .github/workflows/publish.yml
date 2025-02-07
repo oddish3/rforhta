@@ -23,8 +23,6 @@ jobs:
 
       - name: Install R package dependencies
         uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          dependencies: DESCRIPTION # Tell it to use the DESCRIPTION file
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
