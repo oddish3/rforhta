@@ -80,7 +80,7 @@ of writing things called a formula.
 
 In our case, it's `mpg ~ am`.
 
-The tilde symbol '\~' is key here. It means "is modelled by" or "depends
+The tilde symbol `~` is key here. It means "is modelled by" or "depends
 on".
 
 So, `mpg ~ am` is saying that we want to see if 'mpg' (miles per
@@ -95,7 +95,7 @@ fit <- lm(mpg ~ am, data = mtcars)
 print("done")
 ```
 
-We've used `\<-` here to assign the result of the `lm()` function to a variable we've called 'fit'.
+We've used `<-` here to assign the result of the `lm()` function to a variable we've called 'fit'.
 
 You could call it anything you like.
 
