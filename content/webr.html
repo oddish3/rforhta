@@ -2044,19 +2044,19 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <section id="a-linear-model" class="level2">
 <h2 class="anchored" data-anchor-id="a-linear-model">A Linear model</h2>
 <p>Now, when we get to our linear model with ‘lm()’, we use a special way of writing things called a formula.</p>
-<p>In our case, it’s <code>mpg \~ am</code>.</p>
+<p>In our case, it’s <code>mpg ~ am</code>.</p>
 <p>The tilde symbol ‘~’ is key here. It means “is modelled by” or “depends on”.</p>
-<p>So, ‘mpg ~ am’ is saying that we want to see if ‘mpg’ (miles per gallon) is affected or predicted by ‘am’ (the type of gearbox).</p>
-<p>The ‘lm()’ function itself is what actually builds the linear model.</p>
-<p>You give it the formula (‘mpg ~ am’) and tell it where to find the data (‘data = mtcars’), like this:</p>
+<p>So, <code>mpg ~ am</code> is saying that we want to see if ‘mpg’ (miles per gallon) is affected or predicted by ‘am’ (the type of gearbox).</p>
+<p>The <code>lm()</code> function itself is what actually builds the linear model.</p>
+<p>You give it the formula (<code>mpg ~ am</code>) and tell it where to find the data (<code>data = mtcars</code>), like this:</p>
 <div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>We’ve used ‘&lt;-’ here to assign the result of the ‘lm()’ function to a variable we’ve called ‘fit’.</p>
-<p>You could call it anything you like, but ‘fit’ is quite common for a fitted model.</p>
-<p>Finally, the ‘summary()’ function is a handy way to get a good overview of what our ‘lm()’ function has produced.</p>
+<p>We’ve used <code>\&lt;-</code> here to assign the result of the <code>lm()</code> function to a variable we’ve called ‘fit’.</p>
+<p>You could call it anything you like.</p>
+<p>Finally, the <code>summary()</code> function is a handy way to get a good overview of what our <code>lm()</code> function has produced.</p>
 <div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>This ‘summary()’ will give you all sorts of useful information about your model, like the estimated effect of the gearbox type on fuel efficiency, and how reliable that estimate is.</p>
+<p>This <code>summary()</code> will give you all sorts of useful information about your model, like the estimated effect of the gearbox type on fuel efficiency, and how reliable that estimate is.</p>
 
 
 </section>
