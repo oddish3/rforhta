@@ -15,7 +15,8 @@ website:
             href: content/installr.qmd
           - text: "Git Basics"
             href: content/git.qmd
-
+          - text: "R chunk"
+            href: content/webr.qmd
 
 format:
   html:
