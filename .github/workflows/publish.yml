@@ -1,5 +1,4 @@
 name: Quarto Publish
-
 on:
   workflow_dispatch:  # Allows manual triggering from the GitHub Actions UI
   push:
@@ -8,19 +7,15 @@ on:
   pull_request:    # Correct event name for pull requests
     branches:
       - main      # Trigger on pull requests targeting main
-
 jobs:
   publish:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }} # For actions that might need the GitHub Token
-
     steps:
       - uses: actions/checkout@v4
-
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
-
       - name: Cache R packages
         uses: actions/cache@v4
         with:
@@ -28,31 +23,26 @@ jobs:
           key: ${{ runner.os }}-r-${{ hashFiles('DESCRIPTION') }}
           restore-keys: |
             ${{ runner.os }}-r-
-
       - name: Install R package dependencies
         uses: r-lib/actions/setup-r-dependencies@v2
-
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-
-      # Optional: Cache Quarto installation
+      # Optional: Cache Quarto
       - name: Cache Quarto
         uses: actions/cache@v4
         with:
           path: /opt/quarto # Adjust path if necessary
-          key: ${{ runner.os }}-quarto-${{ steps.quarto-version.outputs.version }}
+          key: ${{ runner.os }}-quarto-${{ hashFiles('.github/quarto-version.txt') }}
           restore-keys: |
             ${{ runner.os }}-quarto-
-
       - name: Get Quarto Version
         id: quarto-version
-        run: echo "::set-output name=version::$(quarto --version)"
-
+        run: |
+          echo "version=$(quarto --version)" >> $GITHUB_OUTPUT
       - name: Render Quarto website
         uses: quarto-dev/quarto-actions/render@v2
         with:
-          render-args: "all" # Or specific formats if needed, e.g., "html"
-
+          to: all  # Changed from render-args to to
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4.5.0
         with:
