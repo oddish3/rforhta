@@ -92,16 +92,32 @@ You give it the formula (`mpg ~ am`) and tell it where to find the data (`data =
 
 ```{webr-r}
 fit <- lm(mpg ~ am, data = mtcars)
+print("done")
 ```
 
 We've used `\<-` here to assign the result of the `lm()` function to a variable we've called 'fit'.
 
 You could call it anything you like.
 
-Finally, the `summary()` function is a handy way to get a good overview of what our `lm()` function has produced.
+Finally, the `summary()` function is a handy way to get a good overview of what our `lm()` function has produced which should tell us the estimated effect of the gearbox type on fuel efficiency, and how reliable that estimate is.
 
 ```{webr-r}
 summary(fit)
 ```
 
-This `summary()` will give you all sorts of useful information about your model, like the estimated effect of the gearbox type on fuel efficiency, and how reliable that estimate is.
+Which we can interpret that the average manual vehicle has a estimated mean `mpg` of `17.1` (since the `am` variable at the first level (0) is automatically included in the intercept by R).
+And, the coefficient of `7.245` represents the estimated difference in the mean `mpg` between the automatic (am = 1) and manual (am = 0) group, where the p-value associated with the `am` coefficient (`0.000285`) indicates that this difference in means is statistically significant
+
+```{r}
+# ggplot(mtcars, aes(x = mpg, y = am)) +
+#   geom_point() + # aes(color = species, shape = species)
+#   geom_smooth(method = "lm") +
+#   labs(
+#     title = "Miles Per Gallon and Gearbox Type",
+#     # subtitle = "Dimensions for Adelie, Chinstrap, and Gentoo Penguins",
+#     x = "Fule Efficiency",
+#     y = "Gearbox type"
+#     # color = "Species",
+#     # shape = "Species"
+#   )
+```
