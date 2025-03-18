@@ -8,8 +8,84 @@ filters:
 
 This is a webR-enabled code cell in a Quarto HTML document.
 
-```{webr-r}
-fit = lm(mpg ~ am, data = mtcars)
+First things first, we're using a dataset called `mtcars`.
 
+It's built right into R, so you don't need to load anything special.
+
+To have a quick peek at the first few rows, you can use the `head()`
+function:
+
+```{webr-r}
+head(mtcars)
+```
+
+You'll see a bunch of columns (which we call variables) like `mpg`, `cyl`, `disp`, etc.
+
+`mpg` stands for miles per gallon, and `am` is a binary indicator for having an automatic gearbox (1) or manual (0).
+
+To see all of the `mpg` variable in the `mtcars` dataset, we can simply call the dataframe, followed by a dollar sign `$`, followed by the variable name:
+```{webr-r}
+mtcars$mpg
+```
+
+This might make a bit more sense if we look at the structure of the data, with the `str()` function:
+```{webr-r}
+str(mtcars)
+```
+Which tells us `mtcars` is a data.frame with	32 obs. of  11 variables.
+Conveniently, we can also see the dollar sign operator, which allows us to access variables in our dataframe.
+
+We can use this `head()` function, along with the dollar sign operator, to look at the first 5 values for the `mpg` variable in the `mtcars` dataset.
+
+```{webr-r}
+head(mtcars$mpg)
+```
+
+Similarly, to see the first 5 observations of the gearbox type, what would you do? (note that you can type in the box:)
+
+```{webr-r}
+
+```
+
+You'll notice that 'am' is probably shown as 0s and 1s.
+
+We can also look at the first 6 values
+```{webr-r}
+head(mtcars, n = 6)
+```
+
+Or print out the first 6 rows:
+```{webr-r}
+tail(mtcars, n = 6)
+```
+
+## A Linear model
+
+Now, when we get to our linear model with 'lm()', we use a special way
+of writing things called a formula.
+
+In our case, it's `mpg \~ am`.
+
+The tilde symbol '\~' is key here. It means "is modelled by" or "depends on".
+
+So, 'mpg \~ am' is saying that we want to see if 'mpg' (miles per gallon) is affected or predicted by 'am' (the type of gearbox).
+
+The 'lm()' function itself is what actually builds the linear model.
+
+You give it the formula ('mpg \~ am') and tell it where to find the data ('data = mtcars'), like this:
+
+```{webr-r}
+fit <- lm(mpg ~ am, data = mtcars)
+```
+
+We've used '\<-' here to assign the result of the 'lm()' function to a variable we've called 'fit'.
+
+You could call it anything you like, but 'fit' is quite common for a fitted model.
+
+Finally, the 'summary()' function is a handy way to get a good overview of what our 'lm()' function has produced.
+
+```{webr-r}
 summary(fit)
 ```
+
+This 'summary()' will give you all sorts of useful information about your model, like the estimated effect of the gearbox type on fuel efficiency, and how reliable that estimate is.
