@@ -15,7 +15,18 @@
     "href": "content/webr.html",
     "title": "Running R code blocks on a website!",
     "section": "",
-    "text": "This is a webR-enabled code cell in a Quarto HTML document.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "text": "This is a webR-enabled code cell in a Quarto HTML document.\nFirst things first, we’re using a dataset called mtcars.\nIt’s built right into R, so you don’t need to load anything special.\nTo have a quick peek at the first few rows, you can use the head() function:\nYou’ll see a bunch of columns (which we call variables) like mpg, cyl, disp, etc.\nmpg stands for miles per gallon, and am is a binary indicator for having an automatic gearbox (1) or manual (0).\nTo see all of the mpg variable in the mtcars dataset, we can simply call the dataframe, followed by a dollar sign $, followed by the variable name:\nThis might make a bit more sense if we look at the structure of the data, with the str() function:\nWhich tells us mtcars is a data.frame with 32 obs. of 11 variables. Conveniently, we can also see the dollar sign operator, which allows us to access variables in our dataframe.\nWe can use this head() function, along with the dollar sign operator, to look at the first 5 values for the mpg variable in the mtcars dataset.\nSimilarly, to see the first 5 observations of the gearbox type, what would you do? (note that you can type in the box:)\nYou’ll notice that ‘am’ is probably shown as 0s and 1s.\nWe can also look at the first 6 values\nOr print out the first 6 rows:",
+    "crumbs": [
+      "Basics",
+      "R chunk"
+    ]
+  },
+  {
+    "objectID": "content/webr.html#a-linear-model",
+    "href": "content/webr.html#a-linear-model",
+    "title": "Running R code blocks on a website!",
+    "section": "A Linear model",
+    "text": "A Linear model\nNow, when we get to our linear model with ‘lm()’, we use a special way of writing things called a formula.\nIn our case, it’s mpg \\~ am.\nThe tilde symbol ‘~’ is key here. It means “is modelled by” or “depends on”.\nSo, ‘mpg ~ am’ is saying that we want to see if ‘mpg’ (miles per gallon) is affected or predicted by ‘am’ (the type of gearbox).\nThe ‘lm()’ function itself is what actually builds the linear model.\nYou give it the formula (‘mpg ~ am’) and tell it where to find the data (‘data = mtcars’), like this:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWe’ve used ‘&lt;-’ here to assign the result of the ‘lm()’ function to a variable we’ve called ‘fit’.\nYou could call it anything you like, but ‘fit’ is quite common for a fitted model.\nFinally, the ‘summary()’ function is a handy way to get a good overview of what our ‘lm()’ function has produced.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThis ‘summary()’ will give you all sorts of useful information about your model, like the estimated effect of the gearbox type on fuel efficiency, and how reliable that estimate is.",
     "crumbs": [
       "Basics",
       "R chunk"
