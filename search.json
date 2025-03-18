@@ -1,5 +1,33 @@
 [
   {
+    "objectID": "content/git.html",
+    "href": "content/git.html",
+    "title": "git and github",
+    "section": "",
+    "text": "git is a difficult but extremely helpful tool for those of us that work with data.\ngit is a tool that tracks changes to your files and enables you to share those changes with others.\nThese git configured set of files are called repositories or repos and are organised in a structured way.\nA rather large caveat is that:\n\nit is very much not advised to store data in these projects on git\nwhen working in groups, it is best to store data elsewhere and have scripts that interact with your local copy of the data\n\nIn my work, i use git to store text based code as a backup in case i make breaking changes to my analytical workflow that result in different results / different subsets of data etc.\nabcdefg",
+    "crumbs": [
+      "Basics",
+      "Git Basics"
+    ]
+  },
+  {
+    "objectID": "content/webr.html",
+    "href": "content/webr.html",
+    "title": "Running R code blocks on a website!",
+    "section": "",
+    "text": "This is a webR-enabled code cell in a Quarto HTML document.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "rforhta",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2\n\n\nThis is an example of the code used to make the following ggplot:\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point(aes(color = species, shape = species)) +\n  geom_smooth(method = \"lm\") +\n  labs(\n    title = \"Body mass and flipper length\",\n    subtitle = \"Dimensions for Adelie, Chinstrap, and Gentoo Penguins\",\n    x = \"Flipper length (mm)\",\n    y = \"Body mass (g)\",\n    color = \"Species\",\n    shape = \"Species\"\n  )\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nNotice the color, shape arguments and geom_smooth() function used in the included code block!",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
     "objectID": "content/installr.html",
     "href": "content/installr.html",
     "title": "Install R/Rstudio",
@@ -59,26 +87,5 @@
     "title": "Base R",
     "section": "Before R there was?",
     "text": "Before R there was?"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "rforhta",
-    "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2\n\n\nThis is an example of the code used to make the following ggplot:\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point(aes(color = species, shape = species)) +\n  geom_smooth(method = \"lm\") +\n  labs(\n    title = \"Body mass and flipper length\",\n    subtitle = \"Dimensions for Adelie, Chinstrap, and Gentoo Penguins\",\n    x = \"Flipper length (mm)\",\n    y = \"Body mass (g)\",\n    color = \"Species\",\n    shape = \"Species\"\n  )\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nNotice the color, shape arguments and geom_smooth() function used in the included code block!",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "content/git.html",
-    "href": "content/git.html",
-    "title": "git and github",
-    "section": "",
-    "text": "git is a difficult but extremely helpful tool for those of us that work with data.\ngit is a tool that tracks changes to your files and enables you to share those changes with others.\nThese git configured set of files are called repositories or repos and are organised in a structured way.\nA rather large caveat is that:\n\nit is very much not advised to store data in these projects on git\nwhen working in groups, it is best to store data elsewhere and have scripts that interact with your local copy of the data\n\nIn my work, i use git to store text based code as a backup in case i make breaking changes to my analytical workflow that result in different results / different subsets of data etc.\nabcdefg",
-    "crumbs": [
-      "Basics",
-      "Git Basics"
-    ]
   }
 ]
