@@ -1,0 +1,15 @@
+---
+title: Running R code blocks on a website!
+format: html
+engine: knitr
+filters:
+  - webr
+---
+
+This is a webR-enabled code cell in a Quarto HTML document.
+
+```{webr-r}
+fit = lm(mpg ~ am, data = mtcars)
+
+summary(fit)
+```

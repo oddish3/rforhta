@@ -26,8 +26,6 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-        with:
-          tinytex: true # If you need LaTeX for PDF output (books, etc.)
 
       - name: Render Quarto website
         uses: quarto-dev/quarto-actions/render@v2
@@ -38,5 +36,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.5.0
         with:
           branch: gh-pages      # Deploy to the gh-pages branch
-          folder: _site         # Output folder from Quarto render
+          folder: _site         # Output folder from Quarto renderå
           token: ${{ secrets.ACTIONS_DEPLOY_KEY }}

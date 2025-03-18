@@ -9,6 +9,7 @@ Depends:
 Imports:
     palmerpenguins,
     tidyverse (>= 2.0.0),
+    webr,
 Suggests:
     downlit,
     jpeg,
