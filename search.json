@@ -35,9 +35,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "rforhta",
+    "title": "MCHE R Homepage",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2\n\n\nHello MCHE R meeting!\nThis is an example of the code used to make the following ggplot:\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point(aes(color = species, shape = species)) +\n  geom_smooth(method = \"lm\") +\n  labs(\n    title = \"Body mass and flipper length\",\n    subtitle = \"Dimensions for Adelie, Chinstrap, and Gentoo Penguins\",\n    x = \"Flipper length (mm)\",\n    y = \"Body mass (g)\",\n    color = \"Species\",\n    shape = \"Species\"\n  )\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nNotice the color, shape arguments and geom_smooth() function used in the included code block!",
+    "text": "Hello MCHE R meeting!\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\nYou can see the output from running R code on this website:\n\n1 + 1\n\n[1] 2\n\n\nThis is an example of the code used to make the following ggplot:\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point(aes(color = species, shape = species)) +\n  geom_smooth(method = \"lm\") +\n  labs(\n    title = \"Body mass and flipper length\",\n    subtitle = \"Dimensions for Adelie, Chinstrap, and Gentoo Penguins\",\n    x = \"Flipper length (mm)\",\n    y = \"Body mass (g)\",\n    color = \"Species\",\n    shape = \"Species\"\n  )\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nNotice the color, shape arguments and geom_smooth() function used in the included code block!",
     "crumbs": [
       "Home"
     ]
