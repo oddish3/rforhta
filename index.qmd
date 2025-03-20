@@ -1,17 +1,18 @@
 ---
-title: "rforhta"
+title: "MCHE R Homepage"
 ---
+
+Hello MCHE R meeting!
 
 This is a Quarto website.
 
 To learn more about Quarto websites visit
 <https://quarto.org/docs/websites>.
 
+You can see the output from running R code on this website:
 ```{r}
 1 + 1
 ```
-
-Hello MCHE R meeting!
 
 This is an example of the code used to make the following ggplot:
 ```{r echo=FALSE}
