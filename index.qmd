@@ -11,6 +11,8 @@ To learn more about Quarto websites visit
 1 + 1
 ```
 
+Hello MCHE R meeting!
+
 This is an example of the code used to make the following ggplot:
 ```{r echo=FALSE}
 library(palmerpenguins)
