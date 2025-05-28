@@ -75,7 +75,7 @@ tail(mtcars, n = 6)
 
 ## A Linear model
 
-Now, when we get to our linear model with 'lm()', we use a special way
+Now, when we get to our linear model with `lm()`, we use a special way
 of writing things called a formula.
 
 In our case, it's `mpg ~ am`.
