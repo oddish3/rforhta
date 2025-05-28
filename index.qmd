@@ -1,8 +1,8 @@
 ---
-title: "MCHE R Homepage"
+title: "Health Economics R Homepage"
 ---
 
-Hello MCHE R meeting!
+Hello R meeting!
 
 This is a Quarto website.
 
