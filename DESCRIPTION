@@ -2,8 +2,8 @@ Package: r4hta
 Title: R for Health Technology Assesment.
 Version: 0.1
 Authors@R: c(
-    person("Sol", "Yates", email = "solyates@gmail.com", role = c("aut", "cre"))
-)
+    person("Sol", "Yates", , "solyates@gmail.com", role = c("aut", "cre")),
+  )
 Depends: 
     R (>= 3.1.0)
 Imports:
