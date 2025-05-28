@@ -46,16 +46,6 @@ jobs:
           #   any::cran_package
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-        with:
-          version: "1.4.550" #load # Expects a .quarto-version file in the repo root
-                        # or specify: version: "1.4.550"
-
-      # Optional: Get Quarto Version (for logging/debug)
-      - name: Get Quarto Version
-        id: quarto-version
-        run: |
-          echo "version=$(quarto --version)" >> $GITHUB_OUTPUT
-          echo "Quarto version: ${{ steps.quarto-version.outputs.version }}"
 
       - name: Render Quarto website
         uses: quarto-dev/quarto-actions/render@v2
