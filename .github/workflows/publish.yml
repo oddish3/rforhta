@@ -41,11 +41,9 @@ jobs:
 
       - name: Install R package dependencies
         uses: r-lib/actions/setup-r-dependencies@v2
-        with:
+        # with:
           # extra-packages: | # If you need to install other packages not in DESCRIPTION
           #   any::cran_package
-          needs: '"website"' # Example: if you have different dependency groups in DESCRIPTION
-
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
