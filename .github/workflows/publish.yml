@@ -1,53 +1,73 @@
 name: Quarto Publish
+
 on:
-  workflow_dispatch:  # Allows manual triggering from the GitHub Actions UI
+  workflow_dispatch:
   push:
     branches:
-      - main      # Trigger on pushes to the main branch
-  pull_request:    # Correct event name for pull requests
+      - main
+  pull_request:
     branches:
-      - main      # Trigger on pull requests targeting main
+      - main
   schedule:
-   - cron: '0 5 * * 1'  # Weekly on Monday 
+    - cron: '0 5 * * 1' # Weekly on Monday at 5 AM UTC
+
 jobs:
   publish:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }} # For actions that might need the GitHub Token
+    # GITHUB_TOKEN is automatically available, env var below might be redundant
+    # env:
+    #   GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    permissions: # Add this if you want to use GITHUB_TOKEN for deployment to GitHub Pages
+      contents: write # Or read, depending on if deploying to same repo
+      pages: write # If using GitHub Pages environments
+      id-token: write # If using OIDC with GitHub Pages
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: 'release' # Or specify a version
+
       - name: Cache R packages
         uses: actions/cache@v4
         with:
           path: ${{ env.R_LIBS_USER }}
-          key: ${{ runner.os }}-r-${{ hashFiles('DESCRIPTION') }}
+          key: ${{ runner.os }}-r-${{ hashFiles('DESCRIPTION') }} # Or renv.lock
           restore-keys: |
             ${{ runner.os }}-r-
+
       - name: Install R package dependencies
         uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          # extra-packages: | # If you need to install other packages not in DESCRIPTION
+          #   any::cran_package
+          needs: '"website"' # Example: if you have different dependency groups in DESCRIPTION
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-      # Optional: Cache Quarto
-      - name: Cache Quarto
-        uses: actions/cache@v4
         with:
-          path: /opt/quarto # Adjust path if necessary
-          key: ${{ runner.os }}-quarto-${{ hashFiles('.github/quarto-version.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-quarto-
+          version: load # Expects a .quarto-version file in the repo root
+                        # or specify: version: "1.4.550"
+
+      # Optional: Get Quarto Version (for logging/debug)
       - name: Get Quarto Version
         id: quarto-version
         run: |
           echo "version=$(quarto --version)" >> $GITHUB_OUTPUT
+          echo "Quarto version: ${{ steps.quarto-version.outputs.version }}"
+
       - name: Render Quarto website
         uses: quarto-dev/quarto-actions/render@v2
-        with:
-          to: all  # Changed from render-args to to
+        # No 'with' needed if _quarto.yml defines all outputs and default render is fine
+
       - name: Deploy to GitHub Pages 🚀
+        # Only deploy on push to main, schedule, or manual dispatch
+        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         uses: JamesIves/github-pages-deploy-action@v4.5.0
         with:
-          branch: gh-pages      # Deploy to the gh-pages branch
-          folder: _site        # Output folder from Quarto render
-          token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          branch: gh-pages
+          folder: _site # Default Quarto output folder
+          token: ${{ secrets.ACTIONS_DEPLOY_KEY }} # Or use GITHUB_TOKEN if permissions are set
