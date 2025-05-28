@@ -7,6 +7,8 @@ on:
   pull_request:    # Correct event name for pull requests
     branches:
       - main      # Trigger on pull requests targeting main
+  schedule:
+   - cron: '0 5 * * 1'  # Weekly on Monday 
 jobs:
   publish:
     runs-on: ubuntu-latest
