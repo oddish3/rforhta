@@ -1,0 +1,711 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Health Economics R Homepage",
+    "section": "",
+    "text": "Hello R meeting!\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\nYou can see the output from running R code on this website:\n\n1 + 1\n\n[1] 2\n\n\nThis is an example of the code used to make the following ggplot:\n\n\n\nAttaching package: 'palmerpenguins'\n\n\nThe following objects are masked from 'package:datasets':\n\n    penguins, penguins_raw\n\n\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point(aes(color = species, shape = species)) +\n  geom_smooth(method = \"lm\") +\n  labs(\n    title = \"Body mass and flipper length\",\n    subtitle = \"Dimensions for Adelie, Chinstrap, and Gentoo Penguins\",\n    x = \"Flipper length (mm)\",\n    y = \"Body mass (g)\",\n    color = \"Species\",\n    shape = \"Species\"\n  )\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nNotice the color, shape arguments and geom_smooth() function used in the included code block!",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector5.html#koan-1-vectors",
+    "href": "content/K01_vector5.html#koan-1-vectors",
+    "title": "Koan #1: Vectors",
+    "section": "Koan #1: Vectors",
+    "text": "Koan #1: Vectors\nComplete each question by filling in the blanks. Test your work as you go!",
+    "crumbs": [
+      "Basics",
+      "Test content 5"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector5.html#question-1",
+    "href": "content/K01_vector5.html#question-1",
+    "title": "Koan #1: Vectors",
+    "section": "Question 1",
+    "text": "Question 1\nMake the first element of this numeric vector ‘6’.",
+    "crumbs": [
+      "Basics",
+      "Test content 5"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector5.html#question-2",
+    "href": "content/K01_vector5.html#question-2",
+    "title": "Koan #1: Vectors",
+    "section": "Question 2",
+    "text": "Question 2\nMake the third element of this character vector ‘economics’.",
+    "crumbs": [
+      "Basics",
+      "Test content 5"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector5.html#question-3a",
+    "href": "content/K01_vector5.html#question-3a",
+    "title": "Koan #1: Vectors",
+    "section": "Question 3a",
+    "text": "Question 3a\nAdd these two numeric vectors.",
+    "crumbs": [
+      "Basics",
+      "Test content 5"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector5.html#question-3b",
+    "href": "content/K01_vector5.html#question-3b",
+    "title": "Koan #1: Vectors",
+    "section": "Question 3b",
+    "text": "Question 3b\nFind the minimum of this vector.",
+    "crumbs": [
+      "Basics",
+      "Test content 5"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector5.html#question-3c",
+    "href": "content/K01_vector5.html#question-3c",
+    "title": "Koan #1: Vectors",
+    "section": "Question 3c",
+    "text": "Question 3c\nFind the sum of all elements of this vector.",
+    "crumbs": [
+      "Basics",
+      "Test content 5"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector5.html#question-3d",
+    "href": "content/K01_vector5.html#question-3d",
+    "title": "Koan #1: Vectors",
+    "section": "Question 3d",
+    "text": "Question 3d\nMultiply a scalar and a vector.",
+    "crumbs": [
+      "Basics",
+      "Test content 5"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector5.html#question-3e",
+    "href": "content/K01_vector5.html#question-3e",
+    "title": "Koan #1: Vectors",
+    "section": "Question 3e",
+    "text": "Question 3e\nDivide two vectors.",
+    "crumbs": [
+      "Basics",
+      "Test content 5"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector5.html#question-4",
+    "href": "content/K01_vector5.html#question-4",
+    "title": "Koan #1: Vectors",
+    "section": "Question 4",
+    "text": "Question 4\nCreate a vector of length 5. It can be numeric or character.",
+    "crumbs": [
+      "Basics",
+      "Test content 5"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector5.html#question-5",
+    "href": "content/K01_vector5.html#question-5",
+    "title": "Koan #1: Vectors",
+    "section": "Question 5",
+    "text": "Question 5\nUse the colon operator to create consecutive numbers.",
+    "crumbs": [
+      "Basics",
+      "Test content 5"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector5.html#question-6",
+    "href": "content/K01_vector5.html#question-6",
+    "title": "Koan #1: Vectors",
+    "section": "Question 6",
+    "text": "Question 6\nCreate a random character vector that draws “heads” or “tails”.",
+    "crumbs": [
+      "Basics",
+      "Test content 5"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector5.html#test-all-your-answers",
+    "href": "content/K01_vector5.html#test-all-your-answers",
+    "title": "Koan #1: Vectors",
+    "section": "🧪 Test All Your Answers",
+    "text": "🧪 Test All Your Answers",
+    "crumbs": [
+      "Basics",
+      "Test content 5"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector5.html#quick-individual-tests",
+    "href": "content/K01_vector5.html#quick-individual-tests",
+    "title": "Koan #1: Vectors",
+    "section": "🎯 Quick Individual Tests",
+    "text": "🎯 Quick Individual Tests\n\n\n\n\n\n\n\n\n\nNext: Once you’ve passed all tests, you’re ready for Koan #2: Tibbles!",
+    "crumbs": [
+      "Basics",
+      "Test content 5"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector4.html",
+    "href": "content/K01_vector4.html",
+    "title": "Koan #1: Vectors",
+    "section": "",
+    "text": "Intro to the Tidyverse by Colleen O’Briant Koan #1: Vectors",
+    "crumbs": [
+      "Basics",
+      "Test content 2"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector4.html#question-1",
+    "href": "content/K01_vector4.html#question-1",
+    "title": "Koan #1: Vectors",
+    "section": "Question 1",
+    "text": "Question 1\nMake the first element of this numeric vector ‘6’.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 2"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector4.html#question-2",
+    "href": "content/K01_vector4.html#question-2",
+    "title": "Koan #1: Vectors",
+    "section": "Question 2",
+    "text": "Question 2\nMake the third element of this character vector ‘economics’.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 2"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector4.html#question-3a",
+    "href": "content/K01_vector4.html#question-3a",
+    "title": "Koan #1: Vectors",
+    "section": "Question 3a",
+    "text": "Question 3a\nAdd these two numeric vectors.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 2"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector4.html#question-3b",
+    "href": "content/K01_vector4.html#question-3b",
+    "title": "Koan #1: Vectors",
+    "section": "Question 3b",
+    "text": "Question 3b\nFind the minimum of this vector.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 2"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector4.html#question-3c",
+    "href": "content/K01_vector4.html#question-3c",
+    "title": "Koan #1: Vectors",
+    "section": "Question 3c",
+    "text": "Question 3c\nFind the sum of all elements of this vector.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 2"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector4.html#question-3d",
+    "href": "content/K01_vector4.html#question-3d",
+    "title": "Koan #1: Vectors",
+    "section": "Question 3d",
+    "text": "Question 3d\nMultiply a scalar and a vector.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 2"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector4.html#question-3e",
+    "href": "content/K01_vector4.html#question-3e",
+    "title": "Koan #1: Vectors",
+    "section": "Question 3e",
+    "text": "Question 3e\nDivide two vectors.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 2"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector4.html#question-4",
+    "href": "content/K01_vector4.html#question-4",
+    "title": "Koan #1: Vectors",
+    "section": "Question 4",
+    "text": "Question 4\nCreate a vector of length 5.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 2"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector4.html#question-5",
+    "href": "content/K01_vector4.html#question-5",
+    "title": "Koan #1: Vectors",
+    "section": "Question 5",
+    "text": "Question 5\nUse the colon operator to create consecutive numbers.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 2"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector4.html#question-6",
+    "href": "content/K01_vector4.html#question-6",
+    "title": "Koan #1: Vectors",
+    "section": "Question 6",
+    "text": "Question 6\nCreate a random character vector that draws “heads” or “tails”.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 2"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector4.html#test-your-answers",
+    "href": "content/K01_vector4.html#test-your-answers",
+    "title": "Koan #1: Vectors",
+    "section": "Test Your Answers",
+    "text": "Test Your Answers\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 2"
+    ]
+  },
+  {
+    "objectID": "content/git.html",
+    "href": "content/git.html",
+    "title": "git and github",
+    "section": "",
+    "text": "git is a difficult but extremely helpful tool for those of us that work with data.\ngit is a tool that tracks changes to your files and enables you to share those changes with others.\nThese git configured set of files are called repositories or repos and are organised in a structured way.\nA rather large caveat is that:\n\nit is very much not advised to store data in these projects on git\nwhen working in groups, it is best to store data elsewhere and have scripts that interact with your local copy of the data\n\nIn my work, i use git to store text based code as a backup in case i make breaking changes to my analytical workflow that result in different results / different subsets of data etc.\nabcdefg",
+    "crumbs": [
+      "Basics",
+      "Git Basics"
+    ]
+  },
+  {
+    "objectID": "content/installr.html",
+    "href": "content/installr.html",
+    "title": "Install R/Rstudio",
+    "section": "",
+    "text": "Rstudio Installation docs - https://posit.co/download/rstudio-desktop/\n\nAfter navigating to this website, the download and install R will link you to R installation\n\n\n\nCRAN\n\n\nNext we want to get to the following page and download whichever R version for your system.\n Once you have completed the setup and open R, you should see a window similar to this:\n Alternatively here is a video to walk you through !(this)[https://www.youtube.com/watch?v=0HzKf-StvOE]",
+    "crumbs": [
+      "Basics",
+      "Installing R"
+    ]
+  },
+  {
+    "objectID": "content/installr.html#install-r",
+    "href": "content/installr.html#install-r",
+    "title": "Install R/Rstudio",
+    "section": "",
+    "text": "Rstudio Installation docs - https://posit.co/download/rstudio-desktop/\n\nAfter navigating to this website, the download and install R will link you to R installation\n\n\n\nCRAN\n\n\nNext we want to get to the following page and download whichever R version for your system.\n Once you have completed the setup and open R, you should see a window similar to this:\n Alternatively here is a video to walk you through !(this)[https://www.youtube.com/watch?v=0HzKf-StvOE]",
+    "crumbs": [
+      "Basics",
+      "Installing R"
+    ]
+  },
+  {
+    "objectID": "content/installr.html#install-rstudio",
+    "href": "content/installr.html#install-rstudio",
+    "title": "Install R/Rstudio",
+    "section": "Install Rstudio",
+    "text": "Install Rstudio\nRStudio is the editor with which we interact with the R language.\n\nRStudio Desktop - https://posit.co/download/rstudio-desktop/\n\n\n\n\nRstudio\n\n\nCongratulatoins, you have installed R and Rstudio and taken your first steps to reproducible research in R.",
+    "crumbs": [
+      "Basics",
+      "Installing R"
+    ]
+  },
+  {
+    "objectID": "content/webr.html",
+    "href": "content/webr.html",
+    "title": "Running R code blocks on a website!",
+    "section": "",
+    "text": "This is a webR-enabled code cell in a Quarto HTML document.\nFirst things first, we’re using a dataset called mtcars.\nIt’s built right into R, so you don’t need to load anything special.\nTo have a quick peek at the first few rows, you can use the head() function:\nYou’ll see a bunch of columns (which we call variables) like mpg, cyl, disp, etc.\nmpg stands for miles per gallon, and am is a binary indicator for having an automatic gearbox (1) or manual (0).\nTo see all of the mpg variable in the mtcars dataset, we can simply call the dataframe, followed by a dollar sign $, followed by the variable name:\nThis might make a bit more sense if we look at the structure of the data, with the str() function:\nWhich tells us mtcars is a data.frame with 32 obs. of 11 variables. Conveniently, we can also see the dollar sign operator, which allows us to access variables in our dataframe.\nWe can use this head() function, along with the dollar sign operator, to look at the first 5 values for the mpg variable in the mtcars dataset.\nSimilarly, to see the first 5 observations of the gearbox type, what would you do? (note that you can type in the box:)\nYou’ll notice that ‘am’ is probably shown as 0s and 1s.\nWe can also look at the first 6 values\nOr print out the first 6 rows:",
+    "crumbs": [
+      "Basics",
+      "R chunk"
+    ]
+  },
+  {
+    "objectID": "content/webr.html#a-linear-model",
+    "href": "content/webr.html#a-linear-model",
+    "title": "Running R code blocks on a website!",
+    "section": "A Linear model",
+    "text": "A Linear model\nNow, when we get to our linear model with lm(), we use a special way of writing things called a formula.\nIn our case, it’s mpg ~ am.\nThe tilde symbol ~ is key here. It means “is modelled by” or “depends on”.\nSo, mpg ~ am is saying that we want to see if ‘mpg’ (miles per gallon) is affected or predicted by ‘am’ (the type of gearbox).\nThe lm() function itself is what actually builds the linear model.\nYou give it the formula (mpg ~ am) and tell it where to find the data (data = mtcars), like this:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWe’ve used &lt;- here to assign the result of the lm() function to a variable we’ve called ‘fit’.\nYou could call it anything you like.\nFinally, the summary() function is a handy way to get a good overview of what our lm() function has produced which should tell us the estimated effect of the gearbox type on fuel efficiency, and how reliable that estimate is.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWhich we can interpret that the average manual vehicle has a estimated mean mpg of 17.1 (since the am variable at the first level (0) is automatically included in the intercept by R). And, the coefficient of 7.245 represents the estimated difference in the mean mpg between the automatic (am = 1) and manual (am = 0) group, where the p-value associated with the am coefficient (0.000285) indicates that this difference in means is statistically significant\n\n# ggplot(mtcars, aes(x = mpg, y = am)) +\n#   geom_point() + # aes(color = species, shape = species)\n#   geom_smooth(method = \"lm\") +\n#   labs(\n#     title = \"Miles Per Gallon and Gearbox Type\",\n#     # subtitle = \"Dimensions for Adelie, Chinstrap, and Gentoo Penguins\",\n#     x = \"Fule Efficiency\",\n#     y = \"Gearbox type\"\n#     # color = \"Species\",\n#     # shape = \"Species\"\n#   )",
+    "crumbs": [
+      "Basics",
+      "R chunk"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector2.html",
+    "href": "content/K01_vector2.html",
+    "title": "Koan #1: Vectors",
+    "section": "",
+    "text": "Intro to the Tidyverse by Colleen O’Briant Koan #1: Vectors\nComplete each question, then use the individual test functions to check your work immediately!",
+    "crumbs": [
+      "Basics",
+      "Test content 4"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector2.html#question-1",
+    "href": "content/K01_vector2.html#question-1",
+    "title": "Koan #1: Vectors",
+    "section": "Question 1",
+    "text": "Question 1\nMake the first element of this numeric vector ‘6’.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 4"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector2.html#question-2",
+    "href": "content/K01_vector2.html#question-2",
+    "title": "Koan #1: Vectors",
+    "section": "Question 2",
+    "text": "Question 2\nMake the third element of this character vector ‘economics’.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 4"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector2.html#question-3a",
+    "href": "content/K01_vector2.html#question-3a",
+    "title": "Koan #1: Vectors",
+    "section": "Question 3a",
+    "text": "Question 3a\nAdd these two numeric vectors.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 4"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector2.html#question-3b",
+    "href": "content/K01_vector2.html#question-3b",
+    "title": "Koan #1: Vectors",
+    "section": "Question 3b",
+    "text": "Question 3b\nFind the minimum of this vector.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 4"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector2.html#final-test---run-all-questions",
+    "href": "content/K01_vector2.html#final-test---run-all-questions",
+    "title": "Koan #1: Vectors",
+    "section": "Final Test - Run All Questions",
+    "text": "Final Test - Run All Questions\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 4"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector.html",
+    "href": "content/K01_vector.html",
+    "title": "Koan #1: Vectors",
+    "section": "",
+    "text": "Intro to the Tidyverse by Colleen O’Briant Koan #1: Vectors",
+    "crumbs": [
+      "Basics",
+      "Test content 1"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector.html#question-1",
+    "href": "content/K01_vector.html#question-1",
+    "title": "Koan #1: Vectors",
+    "section": "Question 1",
+    "text": "Question 1\nMake the first element of this numeric vector ‘6’.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 1"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector.html#question-2",
+    "href": "content/K01_vector.html#question-2",
+    "title": "Koan #1: Vectors",
+    "section": "Question 2",
+    "text": "Question 2\nMake the third element of this character vector ‘economics’.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 1"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector.html#question-3a",
+    "href": "content/K01_vector.html#question-3a",
+    "title": "Koan #1: Vectors",
+    "section": "Question 3a",
+    "text": "Question 3a\nAdd these two numeric vectors.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 1"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector.html#question-3b",
+    "href": "content/K01_vector.html#question-3b",
+    "title": "Koan #1: Vectors",
+    "section": "Question 3b",
+    "text": "Question 3b\nFind the minimum of this vector.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 1"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector.html#question-3c",
+    "href": "content/K01_vector.html#question-3c",
+    "title": "Koan #1: Vectors",
+    "section": "Question 3c",
+    "text": "Question 3c\nFind the sum of all elements of this vector.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 1"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector.html#question-3d",
+    "href": "content/K01_vector.html#question-3d",
+    "title": "Koan #1: Vectors",
+    "section": "Question 3d",
+    "text": "Question 3d\nMultiply a scalar and a vector.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 1"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector.html#question-3e",
+    "href": "content/K01_vector.html#question-3e",
+    "title": "Koan #1: Vectors",
+    "section": "Question 3e",
+    "text": "Question 3e\nDivide two vectors.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 1"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector.html#question-4",
+    "href": "content/K01_vector.html#question-4",
+    "title": "Koan #1: Vectors",
+    "section": "Question 4",
+    "text": "Question 4\nCreate a vector of length 5.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 1"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector.html#question-5",
+    "href": "content/K01_vector.html#question-5",
+    "title": "Koan #1: Vectors",
+    "section": "Question 5",
+    "text": "Question 5\nUse the colon operator to create consecutive numbers.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 1"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector.html#question-6",
+    "href": "content/K01_vector.html#question-6",
+    "title": "Koan #1: Vectors",
+    "section": "Question 6",
+    "text": "Question 6\nCreate a random character vector that draws “heads” or “tails”.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 1"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector.html#run-all-tests",
+    "href": "content/K01_vector.html#run-all-tests",
+    "title": "Koan #1: Vectors",
+    "section": "Run All Tests",
+    "text": "Run All Tests\nOnce you’ve completed all questions, run this to test everything:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 1"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html",
+    "href": "content/basicr.html",
+    "title": "Base R",
+    "section": "",
+    "text": "this is your introduction to base R"
+  },
+  {
+    "objectID": "content/basicr.html#introduction",
+    "href": "content/basicr.html#introduction",
+    "title": "Base R",
+    "section": "",
+    "text": "this is your introduction to base R"
+  },
+  {
+    "objectID": "content/basicr.html#base-r",
+    "href": "content/basicr.html#base-r",
+    "title": "Base R",
+    "section": "Base R",
+    "text": "Base R"
+  },
+  {
+    "objectID": "content/basicr.html#before-r-there-was",
+    "href": "content/basicr.html#before-r-there-was",
+    "title": "Base R",
+    "section": "Before R there was?",
+    "text": "Before R there was?"
+  },
+  {
+    "objectID": "content/K01_vector1.html",
+    "href": "content/K01_vector1.html",
+    "title": "Koan #1: Vectors",
+    "section": "",
+    "text": "Intro to the Tidyverse by Colleen O’Briant Koan #1: Vectors",
+    "crumbs": [
+      "Basics",
+      "Test content 3"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector1.html#question-1",
+    "href": "content/K01_vector1.html#question-1",
+    "title": "Koan #1: Vectors",
+    "section": "Question 1",
+    "text": "Question 1\nMake the first element of this numeric vector ‘6’.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 3"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector1.html#question-2",
+    "href": "content/K01_vector1.html#question-2",
+    "title": "Koan #1: Vectors",
+    "section": "Question 2",
+    "text": "Question 2\nMake the third element of this character vector ‘economics’.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 3"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector1.html#question-3a",
+    "href": "content/K01_vector1.html#question-3a",
+    "title": "Koan #1: Vectors",
+    "section": "Question 3a",
+    "text": "Question 3a\nAdd these two numeric vectors.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 3"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector1.html#question-3b",
+    "href": "content/K01_vector1.html#question-3b",
+    "title": "Koan #1: Vectors",
+    "section": "Question 3b",
+    "text": "Question 3b\nFind the minimum of this vector.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 3"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector1.html#question-3c",
+    "href": "content/K01_vector1.html#question-3c",
+    "title": "Koan #1: Vectors",
+    "section": "Question 3c",
+    "text": "Question 3c\nFind the sum of all elements of this vector.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 3"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector1.html#question-3d",
+    "href": "content/K01_vector1.html#question-3d",
+    "title": "Koan #1: Vectors",
+    "section": "Question 3d",
+    "text": "Question 3d\nMultiply a scalar and a vector.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 3"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector1.html#question-3e",
+    "href": "content/K01_vector1.html#question-3e",
+    "title": "Koan #1: Vectors",
+    "section": "Question 3e",
+    "text": "Question 3e\nDivide two vectors.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 3"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector1.html#question-4",
+    "href": "content/K01_vector1.html#question-4",
+    "title": "Koan #1: Vectors",
+    "section": "Question 4",
+    "text": "Question 4\nCreate a vector of length 5.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 3"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector1.html#question-5",
+    "href": "content/K01_vector1.html#question-5",
+    "title": "Koan #1: Vectors",
+    "section": "Question 5",
+    "text": "Question 5\nUse the colon operator to create consecutive numbers.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 3"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector1.html#question-6",
+    "href": "content/K01_vector1.html#question-6",
+    "title": "Koan #1: Vectors",
+    "section": "Question 6",
+    "text": "Question 6\nCreate a random character vector that draws “heads” or “tails”.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 3"
+    ]
+  },
+  {
+    "objectID": "content/K01_vector1.html#check-your-answers",
+    "href": "content/K01_vector1.html#check-your-answers",
+    "title": "Koan #1: Vectors",
+    "section": "Check Your Answers",
+    "text": "Check Your Answers\nRun this code block to test all your answers at once:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Basics",
+      "Test content 3"
+    ]
+  }
+]
