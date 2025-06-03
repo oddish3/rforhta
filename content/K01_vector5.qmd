@@ -1,0 +1,269 @@
+---
+title: "Koan #1: Vectors"
+engine: knitr
+format: live-html
+---
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| include: false
+# Hidden setup - answer key and test functions (students can't see this!)
+library(testthat)
+
+# Answer key (completely hidden from students)
+answers <- list(
+  q1 = c(6, 4, 5, 2, 3),
+  q2 = c("apple", "banana", "economics"),
+  q3a = c(6, 3, 2) + c(3, 2, 1) == c(9, 5, 3),
+  q3b = min(c(6, 3, 2)) == 2,
+  q3c = sum(c(6, 3, 2)) == 11,
+  q3d = 100 * c(6, 3, 2) == c(600, 300, 200),
+  q3e = c(6, 3, 2) / c(2, 3, 1) == c(3, 1, 2),
+  q5 = c(2, 3, 4) == 2:4
+)
+
+# Test function (also hidden)
+run_tests <- function() {
+  cat("=== KOAN #1: VECTORS TEST RESULTS ===\n\n")
+  passed <- 0
+  total <- 0
+  
+  test_cases <- list(
+    list(name = "Question 1", var = "q1_answer", expected = answers$q1, 
+         hint = "First element should be 6"),
+    list(name = "Question 2", var = "q2_answer", expected = answers$q2,
+         hint = "Third element should be 'economics'"),
+    list(name = "Question 3a", var = "q3a_answer", expected = answers$q3a,
+         hint = "Check your vector addition: 6+3=9, 3+2=5, 2+1=3"),
+    list(name = "Question 3b", var = "q3b_answer", expected = answers$q3b,
+         hint = "What's the smallest number in c(6, 3, 2)?"),
+    list(name = "Question 3c", var = "q3c_answer", expected = answers$q3c,
+         hint = "Add up all elements: 6+3+2=?"),
+    list(name = "Question 3d", var = "q3d_answer", expected = answers$q3d,
+         hint = "Multiply each element by 100"),
+    list(name = "Question 3e", var = "q3e_answer", expected = answers$q3e,
+         hint = "Divide element by element: 6/2=3, 3/3=1, 2/1=2"),
+    list(name = "Question 5", var = "q5_answer", expected = answers$q5,
+         hint = "Use the colon operator: 2:4")
+  )
+  
+  for (test in test_cases) {
+    total <- total + 1
+    if (exists(test$var)) {
+      student_answer <- get(test$var)
+      if (isTRUE(all.equal(student_answer, test$expected))) {
+        cat("✅", test$name, ": PASSED\n")
+        passed <- passed + 1
+      } else {
+        cat("❌", test$name, ": FAILED -", test$hint, "\n")
+      }
+    } else {
+      cat("❌", test$name, ": FAILED - Create the variable", test$var, "\n")
+    }
+  }
+  
+  # Special test for Q4 (just check length)
+  total <- total + 1
+  if (exists("q4_answer")) {
+    if (length(q4_answer) == 5) {
+      cat("✅ Question 4: PASSED\n")
+      passed <- passed + 1
+    } else {
+      cat("❌ Question 4: FAILED - Vector should have exactly 5 elements\n")
+    }
+  } else {
+    cat("❌ Question 4: FAILED - Create q4_answer\n")
+  }
+  
+  # Special test for Q6 (check structure)
+  total <- total + 1
+  if (exists("q6_answer")) {
+    if (is.character(q6_answer) && length(q6_answer) == 5 && 
+        all(q6_answer %in% c("heads", "tails"))) {
+      cat("✅ Question 6: PASSED\n")
+      passed <- passed + 1
+    } else {
+      cat("❌ Question 6: FAILED - Should be 5 random 'heads' or 'tails'\n")
+    }
+  } else {
+    cat("❌ Question 6: FAILED - Create q6_answer\n")
+  }
+  
+  cat("\n=== SUMMARY ===\n")
+  cat("Passed:", passed, "out of", total, "tests (", 
+      round(100*passed/total, 1), "%)\n")
+  
+  if (passed == total) {
+    cat("🎉 Perfect score! You've mastered vectors!\n")
+    cat("Ready to move on to the next koan: Tibbles\n")
+  } else if (passed >= total * 0.8) {
+    cat("🌟 Great job! Just a few more to go!\n")
+  } else if (passed >= total * 0.5) {
+    cat("💪 Good progress! Keep working on it!\n")
+  } else {
+    cat("📚 Keep studying and try again!\n")
+  }
+}
+
+# Individual test functions for immediate feedback
+test_q1 <- function() {
+  if (!exists("q1_answer")) {
+    cat("❌ Create q1_answer first!\n")
+    return(FALSE)
+  }
+  if (isTRUE(all.equal(q1_answer, answers$q1))) {
+    cat("✅ Question 1 correct!\n")
+    return(TRUE)
+  } else {
+    cat("❌ Not quite. First element should be 6\n")
+    return(FALSE)
+  }
+}
+
+test_q2 <- function() {
+  if (!exists("q2_answer")) {
+    cat("❌ Create q2_answer first!\n")
+    return(FALSE)
+  }
+  if (isTRUE(all.equal(q2_answer, answers$q2))) {
+    cat("✅ Question 2 correct!\n")
+    return(TRUE)
+  } else {
+    cat("❌ Not quite. Third element should be 'economics'\n")
+    return(FALSE)
+  }
+}
+```
+
+# Intro to the Tidyverse by Colleen O'Briant
+## Koan #1: Vectors
+
+Complete each question by filling in the blanks. Test your work as you go!
+
+---
+
+## Question 1
+Make the first element of this numeric vector '6'.
+
+```{webr}
+# Fill in the blank:
+q1_answer <- c(__, 4, 5, 2, 3)
+
+# Test immediately (uncomment when ready):
+# test_q1()
+```
+
+## Question 2
+Make the third element of this character vector 'economics'.
+
+```{webr}
+# Fill in the blank:
+q2_answer <- c("apple", "banana", __)
+
+# Test immediately (uncomment when ready):
+# test_q2()
+```
+
+## Question 3a
+Add these two numeric vectors.
+
+```{webr}
+# Fill in the blanks:
+q3a_answer <- c(6, 3, 2) + c(3, 2, 1) == c(__, __, __)
+```
+
+## Question 3b
+Find the minimum of this vector.
+
+```{webr}
+# First, check what min() does:
+?min
+
+# Fill in the blank:
+q3b_answer <- min(c(6, 3, 2)) == __
+```
+
+## Question 3c
+Find the sum of all elements of this vector.
+
+```{webr}
+# First, check what sum() does:
+?sum
+
+# Fill in the blank:
+q3c_answer <- sum(c(6, 3, 2)) == __
+```
+
+## Question 3d
+Multiply a scalar and a vector.
+
+```{webr}
+# Fill in the blanks:
+q3d_answer <- 100 * c(6, 3, 2) == c(__, __, __)
+```
+
+## Question 3e
+Divide two vectors.
+
+```{webr}
+# Fill in the blanks:
+q3e_answer <- c(6, 3, 2) / c(2, 3, 1) == c(__, __, __)
+```
+
+## Question 4
+Create a vector of length 5. It can be numeric or character.
+
+```{webr}
+# Create any vector with exactly 5 elements:
+q4_answer <- ___
+
+# Check the length:
+# length(q4_answer)
+```
+
+## Question 5
+Use the colon operator to create consecutive numbers.
+
+```{webr}
+# Example: c(1, 2, 3) is the same as 1:3
+c(1, 2, 3) == 1:3
+
+# Fill in the blanks:
+q5_answer <- c(2, 3, 4) == __:__
+```
+
+## Question 6
+Create a random character vector that draws "heads" or "tails".
+
+```{webr}
+# First, check what sample() does:
+?sample
+
+# Fill in the blank:
+q6_answer <- sample(__, size = 5, replace = TRUE)
+
+# Run it a few times to see it's random:
+# q6_answer
+```
+
+---
+
+## 🧪 Test All Your Answers
+
+```{webr}
+# Run this when you've completed all questions:
+run_tests()
+```
+
+## 🎯 Quick Individual Tests
+
+```{webr}
+# Test specific questions individually:
+# test_q1()
+# test_q2()
+```
+
+---
+
+**Next:** Once you've passed all tests, you're ready for Koan #2: Tibbles!

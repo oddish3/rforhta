@@ -1,0 +1,388 @@
+---
+title: "Koan #1: Vectors"
+format: html
+engine: knitr
+filters:
+  - webr
+---
+
+```{webr-r}
+#| include: false
+#| echo: false
+# Hidden setup - answer key and test functions
+library(testthat)
+
+# Answer key (completely hidden from students)
+answers <- list(
+  q1 = c(6, 4, 5, 2, 3),
+  q2 = c("apple", "banana", "economics"),
+  q3a = c(6, 3, 2) + c(3, 2, 1) == c(9, 5, 3),
+  q3b = min(c(6, 3, 2)) == 2,
+  q3c = sum(c(6, 3, 2)) == 11,
+  q3d = 100 * c(6, 3, 2) == c(600, 300, 200),
+  q3e = c(6, 3, 2) / c(2, 3, 1) == c(3, 1, 2),
+  q5 = c(2, 3, 4) == 2:4
+)
+
+# Test function (also hidden)
+run_tests <- function() {
+  cat("=== KOAN #1: VECTORS TEST RESULTS ===\n\n")
+  passed <- 0
+  total <- 0
+  
+  test_cases <- list(
+    list(name = "Question 1", var = "q1_answer", expected = answers$q1),
+    list(name = "Question 2", var = "q2_answer", expected = answers$q2),
+    list(name = "Question 3a", var = "q3a_answer", expected = answers$q3a),
+    list(name = "Question 3b", var = "q3b_answer", expected = answers$q3b),
+    list(name = "Question 3c", var = "q3c_answer", expected = answers$q3c),
+    list(name = "Question 3d", var = "q3d_answer", expected = answers$q3d),
+    list(name = "Question 3e", var = "q3e_answer", expected = answers$q3e),
+    list(name = "Question 5", var = "q5_answer", expected = answers$q5)
+  )
+  
+  for (test in test_cases) {
+    total <- total + 1
+    if (exists(test$var)) {
+      student_answer <- get(test$var)
+      if (isTRUE(all.equal(student_answer, test$expected))) {
+        cat("✓", test$name, ": PASSED\n")
+        passed <- passed + 1
+      } else {
+        cat("✗", test$name, ": FAILED\n")
+      }
+    } else {
+      cat("✗", test$name, ": FAILED - variable not found\n")
+    }
+  }
+  
+  # Special test for Q4 (just check length)
+  total <- total + 1
+  if (exists("q4_answer")) {
+    if (length(q4_answer) == 5) {
+      cat("✓ Question 4: PASSED\n")
+      passed <- passed + 1
+    } else {
+      cat("✗ Question 4: FAILED - should have length 5\n")
+    }
+  } else {
+    cat("✗ Question 4: FAILED - variable not found\n")
+  }
+  
+  # Special test for Q6 (check structure)
+  total <- total + 1
+  if (exists("q6_answer")) {
+    if (is.character(q6_answer) && length(q6_answer) == 5 && 
+        all(q6_answer %in% c("heads", "tails"))) {
+      cat("✓ Question 6: PASSED\n")
+      passed <- passed + 1
+    } else {
+      cat("✗ Question 6: FAILED - check requirements\n")
+    }
+  } else {
+    cat("✗ Question 6: FAILED - variable not found\n")
+  }
+  
+  cat("\n=== SUMMARY ===\n")
+  cat("Passed:", passed, "out of", total, "tests\n")
+  
+  if (passed == total) {
+    cat("🎉 Perfect! You've mastered vectors!\n")
+  } else {
+    cat("💪 Keep working on the failed questions!\n")
+  }
+}
+```
+
+Intro to the Tidyverse by Colleen O'Briant
+Koan #1: Vectors
+
+## Question 1
+Make the first element of this numeric vector '6'.
+
+```{webr-r}
+# Fill in the blank:
+q1_answer <- c(__, 4, 5, 2, 3)
+```
+
+```{webr-r}
+#| include: false
+# Hidden answer key for Question 1
+q1_correct <- c(6, 4, 5, 2, 3)
+```
+
+## Question 2
+Make the third element of this character vector 'economics'.
+
+```{webr-r}
+# Fill in the blank:
+q2_answer <- c("apple", "banana", __)
+```
+
+```{webr-r}
+#| include: false
+# Hidden answer key for Question 2
+q2_correct <- c("apple", "banana", "economics")
+```
+
+## Question 3a
+Add these two numeric vectors.
+
+```{webr-r}
+# Fill in the blanks:
+q3a_answer <- c(6, 3, 2) + c(3, 2, 1) == c(__, __, __)
+```
+
+```{webr-r}
+#| include: false
+# Hidden answer key for Question 3a
+q3a_correct <- c(6, 3, 2) + c(3, 2, 1) == c(9, 5, 3)
+```
+
+## Question 3b
+Find the minimum of this vector.
+
+```{webr-r}
+# Fill in the blank:
+q3b_answer <- min(c(6, 3, 2)) == __
+```
+
+```{webr-r}
+#| include: false
+# Hidden answer key for Question 3b
+q3b_correct <- min(c(6, 3, 2)) == 2
+```
+
+## Question 3c
+Find the sum of all elements of this vector.
+
+```{webr-r}
+# Fill in the blank:
+q3c_answer <- sum(c(6, 3, 2)) == __
+```
+
+```{webr-r}
+#| include: false
+# Hidden answer key for Question 3c
+q3c_correct <- sum(c(6, 3, 2)) == 11
+```
+
+## Question 3d
+Multiply a scalar and a vector.
+
+```{webr-r}
+# Fill in the blanks:
+q3d_answer <- 100 * c(6, 3, 2) == c(__, __, __)
+```
+
+```{webr-r}
+#| include: false
+# Hidden answer key for Question 3d
+q3d_correct <- 100 * c(6, 3, 2) == c(600, 300, 200)
+```
+
+## Question 3e
+Divide two vectors.
+
+```{webr-r}
+# Fill in the blanks:
+q3e_answer <- c(6, 3, 2) / c(2, 3, 1) == c(__, __, __)
+```
+
+```{webr-r}
+#| include: false
+# Hidden answer key for Question 3e
+q3e_correct <- c(6, 3, 2) / c(2, 3, 1) == c(3, 1, 2)
+```
+
+## Question 4
+Create a vector of length 5.
+
+```{webr-r}
+# Create any vector of length 5:
+q4_answer <- ___
+```
+
+```{webr-r}
+#| include: false
+# No specific answer needed for Q4, just check length
+```
+
+## Question 5
+Use the colon operator to create consecutive numbers.
+
+```{webr-r}
+# Fill in the blanks:
+q5_answer <- c(2, 3, 4) == __:__
+```
+
+```{webr-r}
+#| include: false
+# Hidden answer key for Question 5
+q5_correct <- c(2, 3, 4) == 2:4
+```
+
+## Question 6
+Create a random character vector that draws "heads" or "tails".
+
+```{webr-r}
+# Fill in the blank:
+q6_answer <- sample(__, size = 5, replace = TRUE)
+```
+
+```{webr-r}
+#| include: false
+# Hidden answer key for Question 6 (example)
+q6_correct <- sample(c("heads", "tails"), size = 5, replace = TRUE)
+```
+
+## Test Your Answers
+
+```{webr-r}
+#| include: false
+# Hidden test function with access to correct answers
+library(testthat)
+
+run_tests <- function() {
+  cat("=== KOAN #1: VECTORS TEST RESULTS ===\n\n")
+  
+  passed <- 0
+  total <- 0
+  
+  # Test 1
+  total <- total + 1
+  test_that("Question 1", {
+    if (exists("q1_answer")) {
+      expect_equal(q1_answer, q1_correct)
+      cat("✓ Question 1: PASSED\n")
+      passed <<- passed + 1
+    } else {
+      cat("✗ Question 1: FAILED - q1_answer not found\n")
+    }
+  })
+  
+  # Test 2
+  total <- total + 1
+  test_that("Question 2", {
+    if (exists("q2_answer")) {
+      expect_equal(q2_answer, q2_correct)
+      cat("✓ Question 2: PASSED\n")
+      passed <<- passed + 1
+    } else {
+      cat("✗ Question 2: FAILED - q2_answer not found\n")
+    }
+  })
+  
+  # Test 3a
+  total <- total + 1
+  test_that("Question 3a", {
+    if (exists("q3a_answer")) {
+      expect_equal(q3a_answer, q3a_correct)
+      cat("✓ Question 3a: PASSED\n")
+      passed <<- passed + 1
+    } else {
+      cat("✗ Question 3a: FAILED - q3a_answer not found\n")
+    }
+  })
+  
+  # Test 3b
+  total <- total + 1
+  test_that("Question 3b", {
+    if (exists("q3b_answer")) {
+      expect_equal(q3b_answer, q3b_correct)
+      cat("✓ Question 3b: PASSED\n")
+      passed <<- passed + 1
+    } else {
+      cat("✗ Question 3b: FAILED - q3b_answer not found\n")
+    }
+  })
+  
+  # Test 3c
+  total <- total + 1
+  test_that("Question 3c", {
+    if (exists("q3c_answer")) {
+      expect_equal(q3c_answer, q3c_correct)
+      cat("✓ Question 3c: PASSED\n")
+      passed <<- passed + 1
+    } else {
+      cat("✗ Question 3c: FAILED - q3c_answer not found\n")
+    }
+  })
+  
+  # Test 3d
+  total <- total + 1
+  test_that("Question 3d", {
+    if (exists("q3d_answer")) {
+      expect_equal(q3d_answer, q3d_correct)
+      cat("✓ Question 3d: PASSED\n")
+      passed <<- passed + 1
+    } else {
+      cat("✗ Question 3d: FAILED - q3d_answer not found\n")
+    }
+  })
+  
+  # Test 3e
+  total <- total + 1
+  test_that("Question 3e", {
+    if (exists("q3e_answer")) {
+      expect_equal(q3e_answer, q3e_correct)
+      cat("✓ Question 3e: PASSED\n")
+      passed <<- passed + 1
+    } else {
+      cat("✗ Question 3e: FAILED - q3e_answer not found\n")
+    }
+  })
+  
+  # Test 4 (just check length)
+  total <- total + 1
+  test_that("Question 4", {
+    if (exists("q4_answer")) {
+      expect_equal(length(q4_answer), 5)
+      cat("✓ Question 4: PASSED\n")
+      passed <<- passed + 1
+    } else {
+      cat("✗ Question 4: FAILED - q4_answer not found\n")
+    }
+  })
+  
+  # Test 5
+  total <- total + 1
+  test_that("Question 5", {
+    if (exists("q5_answer")) {
+      expect_equal(q5_answer, q5_correct)
+      cat("✓ Question 5: PASSED\n")
+      passed <<- passed + 1
+    } else {
+      cat("✗ Question 5: FAILED - q5_answer not found\n")
+    }
+  })
+  
+  # Test 6 (check structure, not exact values since it's random)
+  total <- total + 1
+  test_that("Question 6", {
+    if (exists("q6_answer")) {
+      expect_true(is.character(q6_answer))
+      expect_equal(length(q6_answer), 5)
+      expect_true(all(q6_answer %in% c("heads", "tails")))
+      cat("✓ Question 6: PASSED\n")
+      passed <<- passed + 1
+    } else {
+      cat("✗ Question 6: FAILED - q6_answer not found\n")
+    }
+  })
+  
+  cat("\n=== SUMMARY ===\n")
+  cat("Passed:", passed, "out of", total, "tests\n")
+  
+  if (passed == total) {
+    cat("🎉 Congratulations! You've mastered vectors!\n")
+  } else {
+    cat("Keep working on the failed questions and test again.\n")
+  }
+}
+```
+
+```{webr-r}
+# Run this to test all your answers
+run_tests()
+```

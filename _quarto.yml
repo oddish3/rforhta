@@ -17,6 +17,16 @@ website:
             href: content/git.qmd
           - text: "R chunk"
             href: content/webr.qmd
+          - text: "Test content 1"
+            href: content/K01_vector.qmd
+          - text: "Test content 2"
+            href: content/K01_vector4.qmd
+          - text: "Test content 3"
+            href: content/K01_vector1.qmd
+          - text: "Test content 4"
+            href: content/K01_vector2.qmd
+          - text: "Test content 5"
+            href: content/K01_vector5.qmd
 
 format:
   html:
