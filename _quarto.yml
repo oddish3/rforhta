@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "rforhta"
+  title: "Learning R!"
   sidebar:
     style: "docked"
     search: true
@@ -11,27 +11,40 @@ website:
         href: index.qmd
       - section: "Basics"
         contents: 
-          - text: "Installing R"
+          - text: "R Basics"
             href: content/installr.qmd
-          - text: "Git Basics"
-            href: content/git.qmd
-          - text: "R chunk"
-            href: content/webr.qmd
-          - text: "Test content 1"
-            href: content/K01_vector.qmd
-          - text: "Test content 2"
-            href: content/K01_vector4.qmd
-          - text: "Test content 3"
-            href: content/K01_vector1.qmd
-          - text: "Test content 4"
-            href: content/K01_vector2.qmd
-          - text: "Test content 5"
-            href: content/K01_vector5.qmd
+          # - text: "Git Basics"
+          #   href: content/git.qmd
+          # - text: "R chunk"
+          #   href: content/webr.qmd
+      # - section: "Koans"
+      #   contents:
+      #     - href: content/koan/K01_vector.qmd
+      #     - href: content/koan/K02_tibble.qmd
+      #     - href: content/koan/K03_pipe.qmd
+      #     - href: content/koan/K04_dplyr1.qmd
+      #     - href: content/koan/K05_dplyr2.qmd
+      #     - href: content/koan/K06_dplyr3.qmd
+      #     - href: content/koan/K07_left_join.qmd
+      #     - href: content/koan/K08_qplot_to_ggplot.qmd
+      #     - href: content/koan/K09_ggplot_aes.qmd
+      #     - href: content/koan/K10_ggplot_geom.qmd
+      #     - href: content/koan/K11_lm.qmd
+      #     - href: content/koan/K12_stats.qmd
+      #     - href: content/koan/K13_functions.qmd
+      #     - href: content/koan/K14_functions_dplyr.qmd
+      #     - href: content/koan/K15_map.qmd
+      #     - href: content/koan/K16_more_map.qmd
+      #     - href: content/koan/K17_lag.qmd
+      #     - href: content/koan/K18_first_differences.qmd
+      #     - href: content/koan/K19_reduce.qmd
+      #     - href: content/koan/K20_accumulate.qmd
 
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
+
 execute:
   freeze: auto
