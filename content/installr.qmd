@@ -2,6 +2,8 @@
 title: "Install R/Rstudio"
 ---
 
+[slides from the workshop](../meta/R_Workshop.pdf)
+
 This will (hopefully) walk you through installing R (the language) and Rstudio (the language editor) to do some Rstats!
 This is similar to writing some English (the language) in Microsoft Word (the language editor).
 
