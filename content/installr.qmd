@@ -1,11 +1,18 @@
 ---
-title: "Install R/Rstudio"
+title: "Installing R/Rstudio and First Steps"
+authors:
+  - name: "Sheezah Ihsan Kausar"
+  - name: "Amber Salisbury"
+  - name: "Sol Yates"
+date: 2025-06-24
 ---
-
-[slides from the workshop](../meta/01/R_Workshop.pdf)
 
 This will (hopefully) walk you through installing R (the language) and Rstudio (the language editor) to do some Rstats!
 This is similar to writing some English (the language) in Microsoft Word (the language editor).
+
+# Housekeeping
+
+If you would prefer the pdf slides from the workshop, you can find them here: [Workshop](../meta/01/R_Workshop.pdf)
 
 Full credit goes to Tatjana Kecojevic from the School of Social Sciences for producing material incorporated into this [Reproducible research: Advancing innovation through connectivity Workshop](https://rrmcrsoss.netlify.app/)
 

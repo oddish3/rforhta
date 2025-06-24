@@ -1,5 +1,10 @@
 ---
 title: "R Basics"
+authors:
+  - name: "Sheezah Ihsan Kausar"
+  - name: "Amber Salisbury"
+  - name: "Sol Yates"
+date: 2025-06-24
 ---
 # R Basics: Part 1
 
