@@ -11,8 +11,10 @@ website:
         href: index.qmd
       - section: "Basics"
         contents: 
-          - text: "R Basics"
+          - text: "Installing R"
             href: content/installr.qmd
+          - text: "R Basics"
+            href: content/basicr.qmd
           # - text: "Git Basics"
           #   href: content/git.qmd
           # - text: "R chunk"
