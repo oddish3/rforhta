@@ -1,0 +1,594 @@
+[
+  {
+    "objectID": "content/basicr.html",
+    "href": "content/basicr.html",
+    "title": "R Basics",
+    "section": "",
+    "text": "Operations\nObjects\nEvaluations\nExercise\n\n\n\n\nR is a flexible and powerful tool - far beyond what spreadsheets like Excel can offer.\nAs data analysis shifts more towards script-based solutions (like R), it’s important to get comfortable with this approach.\nWe know it can feel overwhelming at first - the learning curve is real!\nThis session is here to make that first step easier and help you begin exploring R at your own pace.\n\n\n\n\n\n\n\nArithmetic Operators\n\n\n\n\n\n\n\n\nLogical Operators\n\n\n\n\n\nLet’s start with a few simple calculations. These help you get used to the way R responds.\n1 + 1      # Adds 1 and 1\n12 / 4     # Divides 12 by 4\n3 * 7      # Multiplies 3 by 7\n10 ^ 3     # 10 to the power of 3\nYou’ll see output like:\n    [1] 2\nThat [1] just means this is the first item in the output. If R prints out lots of numbers, it uses [x] to show you where each row starts.\n\n\n\nOperator Precedence (Order of Operations): Just like in maths (BODMAS), R follows a specific order when solving expressions:\n5 * 6 + 2     # Multiplies first, then adds\n5 * (6 + 2)   # Adds first, then multiplies\n\n\n\nIn R, to save values into objects (variables), we use the assignment operator &lt;-.\nThis means: “store the value on the right into the object named on the left.”\nx &lt;- 10   # Assign 10 to object x\ny &lt;- x + 5  # Assign to y the result of x plus 5\nNote: In many other programming languages, = is used for assignment, but in R, the preferred operator is &lt;-. Remember the + sign, by contrast, is an arithmetic operator used for addition, not assignment.\n\n\n\nR is an object-based language. You create and work with objects, which are named containers for data. Think of an object as a labelled box that holds something useful.\nIn R, objects can contain:\n\nA single number (e.g., my_num &lt;- 5)\nA list of numbers (vector)\nA table of data (data frame)\nA grid of values (matrix)\nA custom function\n\n\n\n\nTo create an object, give it a name and use the assignment operator &lt;- to assign it a value.\nRemember, R is case-sensitive - variable names like Data and data refer to different objects.\nWe can then use these objects going forward rather than the values directly. Operations can be applied to these objects, and objects can be over-written.\n\n\n\nFor Example:\nx &lt;- 48\nThis means “x gets 48”. It stores the number 48 in an object called x.\nTo see what’s inside an object, simply type its name:\nx\n## [1] 48\nR remembers this object during your current session and lists it in the Environment tab in RStudio.\nTip: Click on the “Grid” view in the Environment tab to see more details like the object’s type and size.\n\n\n\nYou can store other types of data too. For example, text:\ny &lt;- \"R is cool\"\nThis stores a character string. Don’t forget the quotation marks, or you’ll get an error:\ny &lt;- R is cool\nError: unexpected symbol in \"y &lt;- R is\"\nYou can easily change the contents of an object by giving it a new value:\ny &lt;- 1024\nNow y holds a number instead of text, and its type updates in the Environment.\n\n\n\nOnce you’ve created objects, you can use them in calculations:\nz &lt;- x + y\nz\n## [1] 1072\nThis works because both objects are numeric. But if you try this with text, R will complain:\nmy_obj &lt;- \"hello\"\nmy_obj2 &lt;- \"world!\"\nmy_obj3 &lt;- my_obj + my_obj2\nError in my_obj + my_obj2 : non-numeric argument to binary operator\n\n\n\nIn R, operations like + are designed to work with numeric data. If you try to use + with character strings - such as words or sentences, R will not know how to handle the operation and will return an error.\nThis error means R expected numbers but received text instead. To combine text values (also called concatenating strings), use:\n\npaste(x, y) - joins with a space in between: \"Hello World\"\npaste0(x, y) – joins directly without space: \"HelloWorld\"\n\nTip: Use paste() when you want spacing, and paste0() when you don’t.\n\n\n\nWhat R code would you write to work these out?\n\nWhat is \\(3 \\times 17\\)?\nCreate an object d equal to 10.\nDivide d by 5.\nOverwrite d, let it now be equal to 20, and print d to see the result.\nOverwrite d (currently 20) with \\(4 \\times d\\), and print d.\nOverwrite d (currently 80) with \\(d \\times d\\), and print the result.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\nWhat is \\(3 \\times 17\\)?\n\n3 * 17\n\nCreate an object d equal to 10.\n\nd &lt;- 10\n\nDivide d by 5.\n\nd / 5\n\nOverwrite d, let it now be equal to 20, and print d.\n\nd &lt;- 20\nd\n\nOverwrite d (now 20) with 4 times d, and print d.\n\nd &lt;- d * 4\nd\n\nOverwrite d (now 80) with d times d, and print the result.\n\nd &lt;- d * d\nd\n\n\n\n\n\n\n\nOne frequent mistake is trying to use an object that hasn’t been created:\n\nmy_obj &lt;- 48\nmy_obj4 &lt;- my_obj + no_obj\nError: object 'no_obj' not found\nCheck the Environment tab-if the object isn’t there, R won’t know what to do.\n\nNaming objects is surprisingly hard! Try to keep names short but meaningful. Some good formats:\n\noutput_summary (snake case – recommended)\noutput.summary\noutputSummary\n\n\n\n\n\nAvoid: - Names starting with numbers or a dot followed by a number - Special characters like !, &, * - Using reserved words like TRUE, NA, or built-in functions like data\n\n\n\nViewing Objects in Your Environment\n\nWhen you’ve created lots of objects, it can be hard to keep track of them.\nYou can use the ls() function to list all objects currently in your R environment (or simply the environment pane)\n\nls()\nRemoving Objects from the Environment\n\nrm() can be used to remove specific objects.\n\nrm(a)          # removes object a\nrm(x, y)       # removes multiple objects\n\nBut we recommend getting in the habit of starting fresh and restarting R! In Rstudio, use Ctrl+Shift+F10 (Windows and Linux) or Shift+Command+0 (Mac OS)\n\n\n\n\nEvaluations return TRUE or FALSE\n\nIn R, we can ask questions like “Is one number greater than another?”\nThe result is a logical value: either TRUE or FALSE.\n\nExamples:\n4 &gt; 2     # TRUE – 4 is greater than 2\n4 &gt; 5     # FALSE – 4 is not greater than 5\n4 == 3    # FALSE – 4 is not equal to 3\n4 != 3    # TRUE – 4 is not equal to 3\n\"dog\" == \"dog\"  # TRUE – both are the same string\n\"dog\" == \"cat\"  # FALSE – the strings are different\n\n\n\nTips for Beginners:\n\nUse == when checking for equality (not just =).\nLogical expressions are often used in filters, if-statements, and data analysis.\nYou can use these checks to control your program’s behaviour based on conditions.\n\n\n\n\nStoring Evaluation Results\n\nYou can save the result of an evaluation in an object.\nThis is useful for making decisions or filtering data later.\n\nExample:\nb &lt;- 4 &lt; 2    # Stores the result (FALSE) in object b\nb             # Prints FALSE\nWhen is this useful? - To check conditions (e.g. if a person is over a certain age) - To convert a continuous variable into a binary one (e.g. alive or dead) - Checking if patients meet criteria for treatment or intervention eligibility\n\n\n\nTry these!\n\nCreate a new object A and set it equal to 3.\nCreate another object res, let it be the product of b (where b is equal to 10) and A, and output the result.\nTake the average of b, A, and res.\nIs 6.2 equal to 12.4 / 2?\nLet m = 84 / 106 and q = 156 / 3. Is m / q greater than, less than, or equal to 0.0152?\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\nCreate a new object A and set it equal to 3.\n\nA &lt;- 3\n\nCreate another object res, let it be the product of d and A, and output the result.\n\nres &lt;- d * A\nres\n\nTake the average of d, A, and res.\n\n(d + A + res) / 3\n# mean(c(d, A, res))\n\nIs 6.2 equal to 12.4 / 2?\n\n6.2 == 12.4 / 2\n\nLet m = 84 / 106 and q = 156 / 3. Is m / q greater than, less than, or equal to 0.0152?\n\nm &lt;- 84 / 106\nq &lt;- 156 / 3\nm / q &gt; 0.0152\nm / q &lt; 0.0152\nm / q == 0.0152",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#key-concept",
+    "href": "content/basicr.html#key-concept",
+    "title": "R Basics",
+    "section": "",
+    "text": "R is a flexible and powerful tool - far beyond what spreadsheets like Excel can offer.\nAs data analysis shifts more towards script-based solutions (like R), it’s important to get comfortable with this approach.\nWe know it can feel overwhelming at first - the learning curve is real!\nThis session is here to make that first step easier and help you begin exploring R at your own pace.",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#arithmetic-operators",
+    "href": "content/basicr.html#arithmetic-operators",
+    "title": "R Basics",
+    "section": "",
+    "text": "Arithmetic Operators",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#logical-operators",
+    "href": "content/basicr.html#logical-operators",
+    "title": "R Basics",
+    "section": "",
+    "text": "Logical Operators",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#basic-operations",
+    "href": "content/basicr.html#basic-operations",
+    "title": "R Basics",
+    "section": "",
+    "text": "Let’s start with a few simple calculations. These help you get used to the way R responds.\n1 + 1      # Adds 1 and 1\n12 / 4     # Divides 12 by 4\n3 * 7      # Multiplies 3 by 7\n10 ^ 3     # 10 to the power of 3\nYou’ll see output like:\n    [1] 2\nThat [1] just means this is the first item in the output. If R prints out lots of numbers, it uses [x] to show you where each row starts.",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#basic-operations-1",
+    "href": "content/basicr.html#basic-operations-1",
+    "title": "R Basics",
+    "section": "",
+    "text": "Operator Precedence (Order of Operations): Just like in maths (BODMAS), R follows a specific order when solving expressions:\n5 * 6 + 2     # Multiplies first, then adds\n5 * (6 + 2)   # Adds first, then multiplies",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#assignment-operator-in-r",
+    "href": "content/basicr.html#assignment-operator-in-r",
+    "title": "R Basics",
+    "section": "",
+    "text": "In R, to save values into objects (variables), we use the assignment operator &lt;-.\nThis means: “store the value on the right into the object named on the left.”\nx &lt;- 10   # Assign 10 to object x\ny &lt;- x + 5  # Assign to y the result of x plus 5\nNote: In many other programming languages, = is used for assignment, but in R, the preferred operator is &lt;-. Remember the + sign, by contrast, is an arithmetic operator used for addition, not assignment.",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#objects-in-r",
+    "href": "content/basicr.html#objects-in-r",
+    "title": "R Basics",
+    "section": "",
+    "text": "R is an object-based language. You create and work with objects, which are named containers for data. Think of an object as a labelled box that holds something useful.\nIn R, objects can contain:\n\nA single number (e.g., my_num &lt;- 5)\nA list of numbers (vector)\nA table of data (data frame)\nA grid of values (matrix)\nA custom function",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#objects-in-r-1",
+    "href": "content/basicr.html#objects-in-r-1",
+    "title": "R Basics",
+    "section": "",
+    "text": "To create an object, give it a name and use the assignment operator &lt;- to assign it a value.\nRemember, R is case-sensitive - variable names like Data and data refer to different objects.\nWe can then use these objects going forward rather than the values directly. Operations can be applied to these objects, and objects can be over-written.",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#creating-and-managing-objects-in-r",
+    "href": "content/basicr.html#creating-and-managing-objects-in-r",
+    "title": "R Basics",
+    "section": "",
+    "text": "For Example:\nx &lt;- 48\nThis means “x gets 48”. It stores the number 48 in an object called x.\nTo see what’s inside an object, simply type its name:\nx\n## [1] 48\nR remembers this object during your current session and lists it in the Environment tab in RStudio.\nTip: Click on the “Grid” view in the Environment tab to see more details like the object’s type and size.",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#objects-can-hold-different-things-updating-an-object",
+    "href": "content/basicr.html#objects-can-hold-different-things-updating-an-object",
+    "title": "R Basics",
+    "section": "",
+    "text": "You can store other types of data too. For example, text:\ny &lt;- \"R is cool\"\nThis stores a character string. Don’t forget the quotation marks, or you’ll get an error:\ny &lt;- R is cool\nError: unexpected symbol in \"y &lt;- R is\"\nYou can easily change the contents of an object by giving it a new value:\ny &lt;- 1024\nNow y holds a number instead of text, and its type updates in the Environment.",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#working-with-objects",
+    "href": "content/basicr.html#working-with-objects",
+    "title": "R Basics",
+    "section": "",
+    "text": "Once you’ve created objects, you can use them in calculations:\nz &lt;- x + y\nz\n## [1] 1072\nThis works because both objects are numeric. But if you try this with text, R will complain:\nmy_obj &lt;- \"hello\"\nmy_obj2 &lt;- \"world!\"\nmy_obj3 &lt;- my_obj + my_obj2\nError in my_obj + my_obj2 : non-numeric argument to binary operator",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#why-cant-we-add-text-with",
+    "href": "content/basicr.html#why-cant-we-add-text-with",
+    "title": "R Basics",
+    "section": "",
+    "text": "In R, operations like + are designed to work with numeric data. If you try to use + with character strings - such as words or sentences, R will not know how to handle the operation and will return an error.\nThis error means R expected numbers but received text instead. To combine text values (also called concatenating strings), use:\n\npaste(x, y) - joins with a space in between: \"Hello World\"\npaste0(x, y) – joins directly without space: \"HelloWorld\"\n\nTip: Use paste() when you want spacing, and paste0() when you don’t.",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#exercise",
+    "href": "content/basicr.html#exercise",
+    "title": "R Basics",
+    "section": "",
+    "text": "What R code would you write to work these out?\n\nWhat is \\(3 \\times 17\\)?\nCreate an object d equal to 10.\nDivide d by 5.\nOverwrite d, let it now be equal to 20, and print d to see the result.\nOverwrite d (currently 20) with \\(4 \\times d\\), and print d.\nOverwrite d (currently 80) with \\(d \\times d\\), and print the result.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\nWhat is \\(3 \\times 17\\)?\n\n3 * 17\n\nCreate an object d equal to 10.\n\nd &lt;- 10\n\nDivide d by 5.\n\nd / 5\n\nOverwrite d, let it now be equal to 20, and print d.\n\nd &lt;- 20\nd\n\nOverwrite d (now 20) with 4 times d, and print d.\n\nd &lt;- d * 4\nd\n\nOverwrite d (now 80) with d times d, and print the result.\n\nd &lt;- d * d\nd",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#common-errors",
+    "href": "content/basicr.html#common-errors",
+    "title": "R Basics",
+    "section": "",
+    "text": "One frequent mistake is trying to use an object that hasn’t been created:\n\nmy_obj &lt;- 48\nmy_obj4 &lt;- my_obj + no_obj\nError: object 'no_obj' not found\nCheck the Environment tab-if the object isn’t there, R won’t know what to do.\n\nNaming objects is surprisingly hard! Try to keep names short but meaningful. Some good formats:\n\noutput_summary (snake case – recommended)\noutput.summary\noutputSummary",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#common-errors-1",
+    "href": "content/basicr.html#common-errors-1",
+    "title": "R Basics",
+    "section": "",
+    "text": "Avoid: - Names starting with numbers or a dot followed by a number - Special characters like !, &, * - Using reserved words like TRUE, NA, or built-in functions like data",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#seeing-and-removing-objects-in-r",
+    "href": "content/basicr.html#seeing-and-removing-objects-in-r",
+    "title": "R Basics",
+    "section": "",
+    "text": "Viewing Objects in Your Environment\n\nWhen you’ve created lots of objects, it can be hard to keep track of them.\nYou can use the ls() function to list all objects currently in your R environment (or simply the environment pane)\n\nls()\nRemoving Objects from the Environment\n\nrm() can be used to remove specific objects.\n\nrm(a)          # removes object a\nrm(x, y)       # removes multiple objects\n\nBut we recommend getting in the habit of starting fresh and restarting R! In Rstudio, use Ctrl+Shift+F10 (Windows and Linux) or Shift+Command+0 (Mac OS)",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#logical-evaluations",
+    "href": "content/basicr.html#logical-evaluations",
+    "title": "R Basics",
+    "section": "",
+    "text": "Evaluations return TRUE or FALSE\n\nIn R, we can ask questions like “Is one number greater than another?”\nThe result is a logical value: either TRUE or FALSE.\n\nExamples:\n4 &gt; 2     # TRUE – 4 is greater than 2\n4 &gt; 5     # FALSE – 4 is not greater than 5\n4 == 3    # FALSE – 4 is not equal to 3\n4 != 3    # TRUE – 4 is not equal to 3\n\"dog\" == \"dog\"  # TRUE – both are the same string\n\"dog\" == \"cat\"  # FALSE – the strings are different",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#logical-evaluations-1",
+    "href": "content/basicr.html#logical-evaluations-1",
+    "title": "R Basics",
+    "section": "",
+    "text": "Tips for Beginners:\n\nUse == when checking for equality (not just =).\nLogical expressions are often used in filters, if-statements, and data analysis.\nYou can use these checks to control your program’s behaviour based on conditions.",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#logical-evaluations-2",
+    "href": "content/basicr.html#logical-evaluations-2",
+    "title": "R Basics",
+    "section": "",
+    "text": "Storing Evaluation Results\n\nYou can save the result of an evaluation in an object.\nThis is useful for making decisions or filtering data later.\n\nExample:\nb &lt;- 4 &lt; 2    # Stores the result (FALSE) in object b\nb             # Prints FALSE\nWhen is this useful? - To check conditions (e.g. if a person is over a certain age) - To convert a continuous variable into a binary one (e.g. alive or dead) - Checking if patients meet criteria for treatment or intervention eligibility",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#exercise-1",
+    "href": "content/basicr.html#exercise-1",
+    "title": "R Basics",
+    "section": "",
+    "text": "Try these!\n\nCreate a new object A and set it equal to 3.\nCreate another object res, let it be the product of b (where b is equal to 10) and A, and output the result.\nTake the average of b, A, and res.\nIs 6.2 equal to 12.4 / 2?\nLet m = 84 / 106 and q = 156 / 3. Is m / q greater than, less than, or equal to 0.0152?\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\nCreate a new object A and set it equal to 3.\n\nA &lt;- 3\n\nCreate another object res, let it be the product of d and A, and output the result.\n\nres &lt;- d * A\nres\n\nTake the average of d, A, and res.\n\n(d + A + res) / 3\n# mean(c(d, A, res))\n\nIs 6.2 equal to 12.4 / 2?\n\n6.2 == 12.4 / 2\n\nLet m = 84 / 106 and q = 156 / 3. Is m / q greater than, less than, or equal to 0.0152?\n\nm &lt;- 84 / 106\nq &lt;- 156 / 3\nm / q &gt; 0.0152\nm / q &lt; 0.0152\nm / q == 0.0152",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#r-basics-object-classes-and-structures",
+    "href": "content/basicr.html#r-basics-object-classes-and-structures",
+    "title": "R Basics",
+    "section": "R Basics: Object Classes and Structures",
+    "text": "R Basics: Object Classes and Structures\nGoal: Understand what type of data (class) you’re working with, and how data is organised (structure).\nSo far, we’ve worked with single values (like 1 or 2). But often, objects in R hold multiple values. These could be: - Heights of several children (numbers) - Names of the children (text) - Whether each child is tall or not (TRUE/FALSE)\nWe will learn: - What class an object is - How objects behave depending on their class",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#r-basics-what-is-an-object-class",
+    "href": "content/basicr.html#r-basics-what-is-an-object-class",
+    "title": "R Basics",
+    "section": "R Basics: What is an Object Class?",
+    "text": "R Basics: What is an Object Class?\nEach object in R has a class, which describes the type of data it holds.\n\nnumeric – numbers, e.g. 1.45, 3.2\ninteger – whole numbers, e.g. 4, 22\ncharacter – text, e.g. “Alice”\nfactor – categories, e.g. “Male”, “Female”\nlogical – TRUE or FALSE",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#r-basics-what-is-an-object-class-1",
+    "href": "content/basicr.html#r-basics-what-is-an-object-class-1",
+    "title": "R Basics",
+    "section": "R Basics: What is an Object Class?",
+    "text": "R Basics: What is an Object Class?\nTo check the class of an object, use the class() function:\n# Try these below - what are the classes? \n\nheight &lt;- c(1.38, 1.45, 1.21)\nclass(height)       \n\nnames &lt;- c(\"Alice\", \"Bob\")\nclass(names)        \n\nsex &lt;- factor(c(\"F\", \"M\"))\nclass(sex)          \n\ntall &lt;- height &gt; 1.4\nclass(tall)",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#r-basics-what-is-an-object-class-2",
+    "href": "content/basicr.html#r-basics-what-is-an-object-class-2",
+    "title": "R Basics",
+    "section": "R Basics: What is an Object Class?",
+    "text": "R Basics: What is an Object Class?\nTo check the class of an object, use the class() function:\n# the answere are....\n\nheight &lt;- c(1.38, 1.45, 1.21)\nclass(height)     #numeric  \n\nnames &lt;- c(\"Alice\", \"Bob\")\nclass(names)      #character\n\nsex &lt;- factor(c(\"F\", \"M\"))\nclass(sex)        #factor   \n\ntall &lt;- height &gt; 1.4\nclass(tall)       #logical",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#r-basics-what-are-data-structures",
+    "href": "content/basicr.html#r-basics-what-are-data-structures",
+    "title": "R Basics",
+    "section": "R Basics: What are data structures?",
+    "text": "R Basics: What are data structures?\n\n\n\nData Structures",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#r-basics-vectors",
+    "href": "content/basicr.html#r-basics-vectors",
+    "title": "R Basics",
+    "section": "R Basics: Vectors",
+    "text": "R Basics: Vectors\n\nOne-dimensional arrays\nOne type of data (numeric, character, logical…)\nExample: c(1, 2, 3)\n\n\n\n\nVector",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#r-basics-matrices",
+    "href": "content/basicr.html#r-basics-matrices",
+    "title": "R Basics",
+    "section": "R Basics: Matrices",
+    "text": "R Basics: Matrices\n\nTwo-dimensional arrays\nOne type of data (numeric, character, logical…)\nExample: matrix(1:9, nrow=3, ncol=3)\n\n\n\n\nMatrix",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#r-basics-arrays",
+    "href": "content/basicr.html#r-basics-arrays",
+    "title": "R Basics",
+    "section": "R Basics: Arrays",
+    "text": "R Basics: Arrays\n\nMulti-dimensional arrays\nOne type of data (numeric, character, logical…)\nExample: array(1:27, dim= c(3, 3, 3))\n\n\n\n\nArray",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#r-basics-lists",
+    "href": "content/basicr.html#r-basics-lists",
+    "title": "R Basics",
+    "section": "R Basics: Lists",
+    "text": "R Basics: Lists\n\nOne-dimensional\nDifferent data types\nExample: list(1, “a”, TRUE)\n\n\n\n\nList",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#r-basics-data-frames",
+    "href": "content/basicr.html#r-basics-data-frames",
+    "title": "R Basics",
+    "section": "R Basics: Data Frames",
+    "text": "R Basics: Data Frames\n\nTwo-dimensional\n\nDifferent data types\nExample: data.frame (x=1:3, y=c(“a”, “b”, “c”))\n\n\n\n\nData Frame",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#r-basics-how-to-create-vectors",
+    "href": "content/basicr.html#r-basics-how-to-create-vectors",
+    "title": "R Basics",
+    "section": "R Basics: How to Create Vectors",
+    "text": "R Basics: How to Create Vectors\nWe can make vectors (multiple values in one object) using the c() function:\nc(1.2, 2.3, 3.4)     # combines values into one object\n?c gives help for the combine function. Try it in the console!",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#r-basics-operations-on-vectors",
+    "href": "content/basicr.html#r-basics-operations-on-vectors",
+    "title": "R Basics",
+    "section": "R Basics: Operations on Vectors",
+    "text": "R Basics: Operations on Vectors\nYou can do operations on vectors too:\nAdd values:\nc(1, 2, 3) + 1\nc(1, 2, 3) + c(1, 2, 3)\nc(1, 2, 3, 4) + c(1, 0, 1)   \n\n#Try it in the console!",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#r-basics-operations-on-vectors-1",
+    "href": "content/basicr.html#r-basics-operations-on-vectors-1",
+    "title": "R Basics",
+    "section": "R Basics: Operations on Vectors",
+    "text": "R Basics: Operations on Vectors\nYou can do operations on vectors too:\nAdd values:\nc(1, 2, 3) + 1\n#2 3 4\nc(1, 2, 3) + c(1, 2, 3)\n#2 4 6\nc(1, 2, 3, 4) + c(1, 0, 1)  \n#2 2 4 5\n\n#what did you notice about the last code?\nMultiply:\nheightft &lt;- height * 3.28",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#r-basics-how-to-create-a-matrix",
+    "href": "content/basicr.html#r-basics-how-to-create-a-matrix",
+    "title": "R Basics",
+    "section": "R Basics: How to Create a Matrix",
+    "text": "R Basics: How to Create a Matrix\nWe can make a matrix using the matrix() function:\n# A 2x3 matrix\n\nm &lt;- matrix(1:6, nrow = 2, ncol = 3)\nprint(m)\n\n#Try it in the console",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#r-basics-how-to-create-an-array",
+    "href": "content/basicr.html#r-basics-how-to-create-an-array",
+    "title": "R Basics",
+    "section": "R Basics: How to Create an Array",
+    "text": "R Basics: How to Create an Array\nWe can make an Array using the array() function:\n# Create a 3x3x2 array\n\narr &lt;- array(1:18, dim = c(3, 3, 2))\nprint(arr)\n\n#Try it in the console",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#exercise-time",
+    "href": "content/basicr.html#exercise-time",
+    "title": "R Basics",
+    "section": "Exercise time!",
+    "text": "Exercise time!\n\nCreate a vector called ‘odds’ with the numbers 1,3,5,7,9.\nShow what class odds is.\nEvaluate which numbers in the odds vector are greater than 4.\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n# Create a vector called 'odds' with the numbers \nodds &lt;- c(1, 3, 5, 7, 9)\n\n# Show what class odds is.\nclass(odds) #numeric\n\n# Evaluate which numbers in the odds vector are greater than 4.\nodds &gt; 4  #FALSE FALSE TRUE TRUE TRUE",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#r-basics-loading-in-a-dataset",
+    "href": "content/basicr.html#r-basics-loading-in-a-dataset",
+    "title": "R Basics",
+    "section": "R Basics: Loading in a dataset",
+    "text": "R Basics: Loading in a dataset\nBase R loads in with some base datasets, packages, functions etc, one of these is the iris dataset\ndata(\"iris\")\ndata &lt;- iris\nLoading this in, the environment tab might show us what it contains, but lets double check this\n colnames(data)\n[1] \"Sepal.Length\" \"Sepal.Width\"  \"Petal.Length\" \"Petal.Width\" \n[5] \"Species\" \nHow do we select one of these variables?\nWith the $!\ndata$Sepal.Length\nHow can we check what class this variable is?\nclass(data$Sepal.Length)\n[1] \"numeric\"",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/basicr.html#final-challenge",
+    "href": "content/basicr.html#final-challenge",
+    "title": "R Basics",
+    "section": "Final Challenge",
+    "text": "Final Challenge\nInstall the cowsay package, load it, and use the ‘say’ function to write something memorable\nHint 1: you will need to think back to Sol’s slides on how to load a package\nHint 2: Ask R to help you understand the function!\nShow us what you’ve done in mentimeter\n\n\n\n\n\n\nSolution\n\n\n\n\n\n#Install the cowsay package, load it, and test it:\n\ninstall.packages(\"cowsay\")\nlibrary(cowsay)\nsay(\"I've installed cowsay!\")\n\ncowsay::say(\"Hello\")  # qualified names\n\n#Read the package docs, what else can it do?\n\nvignette(\"cowsay\")\n?cowsay::say\nhelp(package=\"cowsay\") \n\nsay(\"why did the chicken cross the road\", \"chicken\")",
+    "crumbs": [
+      "Basics",
+      "R Basics"
+    ]
+  },
+  {
+    "objectID": "content/installr.html",
+    "href": "content/installr.html",
+    "title": "Installing R/Rstudio and First Steps",
+    "section": "",
+    "text": "This will (hopefully) walk you through installing R (the language) and Rstudio (the language editor) to do some Rstats! This is similar to writing some English (the language) in Microsoft Word (the language editor).",
+    "crumbs": [
+      "Basics",
+      "Installing R"
+    ]
+  },
+  {
+    "objectID": "content/installr.html#installing-r",
+    "href": "content/installr.html#installing-r",
+    "title": "Installing R/Rstudio and First Steps",
+    "section": "Installing R",
+    "text": "Installing R\n\nRstudio Installation docs\n\nAfter navigating to this website, the download and install R will link you to R installation\n\n\n\nCRAN\n\n\nNext we want to get to the following page and download whichever R version for your system.\n\n\n\nInstallR\n\n\nOnce you have completed the setup and open R, you should see a window similar to this:\n\n\n\nRConsole\n\n\nThis is the graphical user interface for the R language, as opposed to Rstudio, which is much more user-friendly.\nAlternatively here is a video to walk you through this",
+    "crumbs": [
+      "Basics",
+      "Installing R"
+    ]
+  },
+  {
+    "objectID": "content/installr.html#installing-rstudio",
+    "href": "content/installr.html#installing-rstudio",
+    "title": "Installing R/Rstudio and First Steps",
+    "section": "Installing Rstudio",
+    "text": "Installing Rstudio\nRStudio is the editor with which we interact with the R language.\n\nRStudio Desktop\n\n\n\n\nRstudio\n\n\nCongratulations, you have installed R and Rstudio and taken your first steps to reproducible research in R.\n\nFirst time opening Rstudio\n\n\n\nRstudio\n\n\n\nThere is likely a lot to take in right now, and a lot of the text you see infornt of you is currently irrelevant\nHowever, the tall red section on the left is the Console and that’s where you can type in R code to execute. This code is also called commands or functions.\n\n\n\n\nRstudio\n\n\n\nIn the top right section, there’s the Environment tab where you can see the data you are currently working on. At first this section is empty because you have not loaded any data yet.\nIn the bottom right section there are tabs to flip through the Files and folder structure of your computer (like in Finder or Explorer), Help information etc.",
+    "crumbs": [
+      "Basics",
+      "Installing R"
+    ]
+  },
+  {
+    "objectID": "content/installr.html#what-everything-means-in-rstudio",
+    "href": "content/installr.html#what-everything-means-in-rstudio",
+    "title": "Installing R/Rstudio and First Steps",
+    "section": "What everything means in Rstudio",
+    "text": "What everything means in Rstudio\nIn order to get the following top script editor in your top left pane, you want to use Ctrl/Cmd + N to create a new file. Alternatively, navigate to file &gt; new file Or, use the folling button in the top left of Rstudio window and select new R file\n\n\n\nRstudio\n\n\n\n\n\nRstudio",
+    "crumbs": [
+      "Basics",
+      "Installing R"
+    ]
+  },
+  {
+    "objectID": "content/installr.html#getting-started-with-r",
+    "href": "content/installr.html#getting-started-with-r",
+    "title": "Installing R/Rstudio and First Steps",
+    "section": "Getting started with R",
+    "text": "Getting started with R\nIn order to get started, lets talk through:\n\ncreating an R script to run some R code\ncreate a project for your code\n\n\nSetting your working directory\nIf you want to read or write files on your computer from and to a specific location you will need to set a working directory in R. It is reccomended to create a new folder called R in your laptops documents folder, before you do this. To set the working directory in R to a specific folder on your computer you will use the following:\n\n# On a windows pc, you would set the working directory like this\nsetwd(\"C:/Documents/MyR_Project\")\n\n# On a mac, you would set the working directory like this\nsetwd(\"~/documents/MyR_Project\")\n\nOr, using the top dropdown menu\n\n\n\nRstudio\n\n\nOr using the ‘More’ gear symbol from the bottom right pane\n\n\n\nRstudio",
+    "crumbs": [
+      "Basics",
+      "Installing R"
+    ]
+  },
+  {
+    "objectID": "content/installr.html#project-orientated-workflow",
+    "href": "content/installr.html#project-orientated-workflow",
+    "title": "Installing R/Rstudio and First Steps",
+    "section": "Project orientated Workflow",
+    "text": "Project orientated Workflow\nHowever, you should always start a fresh project (File | New Project…) that will automatically set up your working directory without having to point to it in your script file.\nNavigate to the R project button in the top right:\n\n\n\nRstudio\n\n\nWhen you press this, you will get the following options:\n\n\n\nRstudio\n\n\nSelecting new project, you are greeted with the following options:\n\n\n\nRstudio\n\n\nSelecting New project and New directory:\n\n\n\nRstudio\n\n\nYou are now asked to create a project (and folder name) as part of a directory you choose in the second box\n\n\n\nRstudio\n\n\nCongratulations! If you can see the file project name in the top right project button and bottom right file path (next to the home symbol), you have taken you first steps to reproducible research in R!\n\n\n\nRstudio",
+    "crumbs": [
+      "Basics",
+      "Installing R"
+    ]
+  },
+  {
+    "objectID": "content/installr.html#r-packages",
+    "href": "content/installr.html#r-packages",
+    "title": "Installing R/Rstudio and First Steps",
+    "section": "R packages",
+    "text": "R packages\n“In R, the fundamental unit of shareable code is the package.” — Hadley Wickham, R packages\nR packages are collections of functions code, data sets, documentation and tests developed by the community, that are mostly made available on the Comprehensive R Archive Network, or CRAN, the public clearing house for R packages.\nThese packages are developed by experts in their fields and currently the CRAN package repository features over 14,000 of them. Many of the analyses that they offer are not even available in any of the standard data analysis software packages, which is one of the reasons that R is so successful.\n\nInstalling and Loading R packages\nYou will likely see something like this in your Rstudio bottom right pane\n\n\n\nRstudio\n\n\nThis means that currently the MASS package is installed, to get this on your system you will need to press the install button and type in this package in the box that pops up\n\n\n\nRstudio\n\n\nNote: Note that when you can call the dialogue window to install a package from the Packages pane it runs a command in the console for you. Can you figure out the syntax to install a package in R?\n\n\n\nPackage Installation Dialog",
+    "crumbs": [
+      "Basics",
+      "Installing R"
+    ]
+  },
+  {
+    "objectID": "content/installr.html#a-small-calculation-in-r",
+    "href": "content/installr.html#a-small-calculation-in-r",
+    "title": "Installing R/Rstudio and First Steps",
+    "section": "A Small Calculation in R",
+    "text": "A Small Calculation in R\nTo begin with, we can use R as a calculator.\nIn your console type in 2 + 2. Note that you don’t have to type the equals sign and that the answer has [1] in front. The [1] indicates that there is only one number in the answer. If the answer contains more than one number it uses numbering like this to indicate where in the ‘group’ of numbers each one is.\n2 + 2\nYou see?! R is like a big calculator!",
+    "crumbs": [
+      "Basics",
+      "Installing R"
+    ]
+  },
+  {
+    "objectID": "content/installr.html#reproducibility-save-your-scripts",
+    "href": "content/installr.html#reproducibility-save-your-scripts",
+    "title": "Installing R/Rstudio and First Steps",
+    "section": "Reproducibility: Save your scripts",
+    "text": "Reproducibility: Save your scripts\nNote: The code you type and want to be executed can be saved in scripts and R Markdown files. Scripts ending with .R file extension and R Markdown files, which mixes both R code and Markdown code, end with .Rmd.\nNote: The code that you write just for quick exploration can be written in the console. Code we want to reuse and show off later should be saved as a script.\n\nCreating New Scripts\nTo create a new script go through the menu File | New File | R Script or through the green plus button on the top left.\n\n\n\nCreating New Script\n\n\n\n\nRunning Scripts\nAny code we type in here can be run and executed in the console. Hitting the Run button at the top of the script window will run the line of code on which the cursor is sitting.\nTo run multiple lines of code, highlight them and click Run.\n\n\n\nRunning Scripts\n\n\nTip: Get into the habit of saving your scripts after you create them. Try to save them before running your code in case you write code that makes R crash which sometimes happens.\n\n\n\nSave Script",
+    "crumbs": [
+      "Basics",
+      "Installing R"
+    ]
+  },
+  {
+    "objectID": "content/installr.html#the-single-most-useful-r-tip",
+    "href": "content/installr.html#the-single-most-useful-r-tip",
+    "title": "Installing R/Rstudio and First Steps",
+    "section": "The single most useful R tip",
+    "text": "The single most useful R tip\nOften, when working with objects in R you may want to start from a new environment, to start from fresh. You may have heard of rm(list=ls()).\nIn order to ensure your analysis is reproducible, save often and restart R often! This ensures R starts with a blank slate and there are no hidden objects or dependencies clogging up your analysis!\n\n\n\nClear Environment",
+    "crumbs": [
+      "Basics",
+      "Installing R"
+    ]
+  },
+  {
+    "objectID": "content/installr.html#file-paths-and-organising-projects-in-r",
+    "href": "content/installr.html#file-paths-and-organising-projects-in-r",
+    "title": "Installing R/Rstudio and First Steps",
+    "section": "File Paths and Organising Projects in R",
+    "text": "File Paths and Organising Projects in R\nThe use of R project lies in the ease of organisation.\n\n\n\nWorking Directory\n\n\nLet’s create some folders with specific purposes:\n\ncode - to hold the R files\ndata - to hold the data for our analysis\n(optional) plots/output - to hold tables and figures etc\n\n\n\n\nFolder Structure Creation\n\n\n\n\n\nProject Structure\n\n\nNow, let’s save a file to our code directory:\n\n\n\nSave to Code Directory\n\n\nNow, our code is saved in a project folder, and we can source it from outside.\n\nOrganising Multiple Files\nLet’s create a new file that depends on our first file.\nfile_1.R:\nanswer_1 &lt;- 1 + 1\nanswer_2 &lt;- 4*5\nfile_2.R:\nprint(answer_1 * answer_2)\nfile_0_main.R:\nlibrary(here)\nsource(here(\"code/file_1.R\"))\nsource(here(\"code/file_2.R\"))",
+    "crumbs": [
+      "Basics",
+      "Installing R"
+    ]
+  },
+  {
+    "objectID": "content/installr.html#project-workflow",
+    "href": "content/installr.html#project-workflow",
+    "title": "Installing R/Rstudio and First Steps",
+    "section": "Project Workflow",
+    "text": "Project Workflow\nYou may have seen diagrams like this:\n\n\n\nWorkflow Diagram\n\n\nBelieve it or not, this is essentially what we have just created!",
+    "crumbs": [
+      "Basics",
+      "Installing R"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Health Economics R Homepage",
+    "section": "",
+    "text": "Hello R meeting!\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\nYou can see the output from running R code on this website:\n\n1 + 1\n\n[1] 2\n\n\nThis is an example of the code used to make the following ggplot:\n\n\n\nAttaching package: 'palmerpenguins'\n\n\nThe following objects are masked from 'package:datasets':\n\n    penguins, penguins_raw\n\n\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point(aes(color = species, shape = species)) +\n  geom_smooth(method = \"lm\") +\n  labs(\n    title = \"Body mass and flipper length\",\n    subtitle = \"Dimensions for Adelie, Chinstrap, and Gentoo Penguins\",\n    x = \"Flipper length (mm)\",\n    y = \"Body mass (g)\",\n    color = \"Species\",\n    shape = \"Species\"\n  )\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nNotice the color, shape arguments and geom_smooth() function used in the included code block!",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "content/git.html",
+    "href": "content/git.html",
+    "title": "git and github",
+    "section": "",
+    "text": "git is a difficult but extremely helpful tool for those of us that work with data.\ngit is a tool that tracks changes to your files and enables you to share those changes with others.\nThese git configured set of files are called repositories or repos and are organised in a structured way.\nA rather large caveat is that:\n\nit is very much not advised to store data in these projects on git\nwhen working in groups, it is best to store data elsewhere and have scripts that interact with your local copy of the data\n\nIn my work, i use git to store text based code as a backup in case i make breaking changes to my analytical workflow that result in different results / different subsets of data etc.\nabcdefg"
+  },
+  {
+    "objectID": "content/webr.html",
+    "href": "content/webr.html",
+    "title": "Running R code blocks on a website!",
+    "section": "",
+    "text": "This is a webR-enabled code cell in a Quarto HTML document.\nFirst things first, we’re using a dataset called mtcars.\nIt’s built right into R, so you don’t need to load anything special.\nTo have a quick peek at the first few rows, you can use the head() function:\nYou’ll see a bunch of columns (which we call variables) like mpg, cyl, disp, etc.\nmpg stands for miles per gallon, and am is a binary indicator for having an automatic gearbox (1) or manual (0).\nTo see all of the mpg variable in the mtcars dataset, we can simply call the dataframe, followed by a dollar sign $, followed by the variable name:\nThis might make a bit more sense if we look at the structure of the data, with the str() function:\nWhich tells us mtcars is a data.frame with 32 obs. of 11 variables. Conveniently, we can also see the dollar sign operator, which allows us to access variables in our dataframe.\nWe can use this head() function, along with the dollar sign operator, to look at the first 5 values for the mpg variable in the mtcars dataset.\nSimilarly, to see the first 5 observations of the gearbox type, what would you do? (note that you can type in the box:)\nYou’ll notice that ‘am’ is probably shown as 0s and 1s.\nWe can also look at the first 6 values\nOr print out the first 6 rows:"
+  },
+  {
+    "objectID": "content/webr.html#a-linear-model",
+    "href": "content/webr.html#a-linear-model",
+    "title": "Running R code blocks on a website!",
+    "section": "A Linear model",
+    "text": "A Linear model\nNow, when we get to our linear model with lm(), we use a special way of writing things called a formula.\nIn our case, it’s mpg ~ am.\nThe tilde symbol ~ is key here. It means “is modelled by” or “depends on”.\nSo, mpg ~ am is saying that we want to see if ‘mpg’ (miles per gallon) is affected or predicted by ‘am’ (the type of gearbox).\nThe lm() function itself is what actually builds the linear model.\nYou give it the formula (mpg ~ am) and tell it where to find the data (data = mtcars), like this:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWe’ve used &lt;- here to assign the result of the lm() function to a variable we’ve called ‘fit’.\nYou could call it anything you like.\nFinally, the summary() function is a handy way to get a good overview of what our lm() function has produced which should tell us the estimated effect of the gearbox type on fuel efficiency, and how reliable that estimate is.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWhich we can interpret that the average manual vehicle has a estimated mean mpg of 17.1 (since the am variable at the first level (0) is automatically included in the intercept by R). And, the coefficient of 7.245 represents the estimated difference in the mean mpg between the automatic (am = 1) and manual (am = 0) group, where the p-value associated with the am coefficient (0.000285) indicates that this difference in means is statistically significant\n\n# ggplot(mtcars, aes(x = mpg, y = am)) +\n#   geom_point() + # aes(color = species, shape = species)\n#   geom_smooth(method = \"lm\") +\n#   labs(\n#     title = \"Miles Per Gallon and Gearbox Type\",\n#     # subtitle = \"Dimensions for Adelie, Chinstrap, and Gentoo Penguins\",\n#     x = \"Fule Efficiency\",\n#     y = \"Gearbox type\"\n#     # color = \"Species\",\n#     # shape = \"Species\"\n#   )"
+  }
+]
