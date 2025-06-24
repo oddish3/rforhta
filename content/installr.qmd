@@ -79,7 +79,9 @@ In order to get started, lets talk through:
 
 ### Setting your working directory
 
-If you want to read or write files on your computer from and to a specific location you will need to set a working directory in R. To set the working directory in R to a specific folder on your computer you will use the following:
+If you want to read or write files on your computer from and to a specific location you will need to set a working directory in R. 
+It is reccomended to **create a new folder called R** in your laptops documents folder, before you do this.
+To set the working directory in R to a specific folder on your computer you will use the following:
 
 ```{r, eval = FALSE}
 # On a windows pc, you would set the working directory like this
